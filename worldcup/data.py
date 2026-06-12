@@ -60,6 +60,49 @@ def load_matches(path: str = DATA_PATH) -> pd.DataFrame:
     return df
 
 
+GOALS_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "goalscorers.csv")
+SHOOTOUTS_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "shootouts.csv")
+CENTROIDS_PATH = os.path.join(os.path.dirname(__file__), "..", "data",
+                              "country_centroids.csv")
+
+# 数据集球队/举办国名 -> 坐标表国名 的差异修正
+_COUNTRY_ALIASES = {
+    "DR Congo": "Congo DRC", "Republic of Ireland": "Ireland",
+    "Cape Verde": "Cabo Verde", "Ivory Coast": "Côte d'Ivoire",
+    "Curaçao": "Curacao", "São Tomé and Príncipe": "Sao Tome and Principe",
+    "Czech Republic": "Czechia", "Turkey": "Turkiye", "Swaziland": "Eswatini",
+    "Macedonia": "North Macedonia", "Micronesia": "Micronesia (Federated States of)",
+    "United States Virgin Islands": "US Virgin Islands",
+    "Saint Vincent and the Grenadines": "St Vincent and the Grenadines",
+    "England": "United Kingdom", "Scotland": "United Kingdom",
+    "Wales": "United Kingdom", "Northern Ireland": "United Kingdom",
+}
+
+
+def load_goal_events(path: str = GOALS_PATH) -> pd.DataFrame:
+    """球员级进球明细: date/home_team/away_team/team/scorer/minute/own_goal/penalty"""
+    g = pd.read_csv(path)
+    g["own_goal"] = g["own_goal"].astype(bool)
+    g["penalty"] = g["penalty"].astype(bool)
+    return g
+
+
+def load_shootouts(path: str = SHOOTOUTS_PATH) -> pd.DataFrame:
+    return pd.read_csv(path, parse_dates=["date"])
+
+
+def load_centroids(path: str = CENTROIDS_PATH) -> dict[str, tuple[float, float]]:
+    """国家 -> (纬度, 经度), 含足球队名别名修正。"""
+    c = pd.read_csv(path)
+    table = {r["COUNTRY"]: (float(r["latitude"]), float(r["longitude"]))
+             for _, r in c.iterrows()}
+    out = dict(table)
+    for alias, canon in _COUNTRY_ALIASES.items():
+        if canon in table:
+            out[alias] = table[canon]
+    return out
+
+
 def played(df: pd.DataFrame) -> pd.DataFrame:
     return df[df["played"]].reset_index(drop=True)
 

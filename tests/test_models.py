@@ -9,8 +9,9 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
 from worldcup.dixon_coles import DixonColes
 from worldcup.elo import compute_elo_history, expected_score
+from worldcup.features import FEATURE_COLS, build_features
 from worldcup.markets import adjust_matrix, market_report
-from worldcup.model import rps
+from worldcup.model import OrderedLogit, rps
 
 
 def synthetic_matches(n=3000, seed=0):
@@ -70,6 +71,33 @@ def test_elo_zero_sum_and_expectation():
     total = sum(ratings.values())
     assert abs(total - 1500 * len(ratings)) < 1e-6  # Elo 零和
     assert expected_score(1600, 1400, True) > 0.7
+
+
+def test_features_complete_and_leakage_free():
+    df, *_ = synthetic_matches(800)
+    df["country"] = "Nowhere"
+    out, _ = compute_elo_history(df)
+    feat = build_features(out)
+    for c in FEATURE_COLS:
+        assert c in feat.columns, f"缺少特征: {c}"
+    # 首场比赛一切状态特征必须是先验值 (无历史信息)
+    first = feat.iloc[0]
+    assert first["form_pts_h"] == 1.0 and first["h2h_gd"] == 0.0
+    assert first["sd_att_h"] == 0.0 and first["elo_trend_h"] == 0.0
+
+
+def test_ordered_logit_learns_elo():
+    df, *_ = synthetic_matches(2500)
+    df["country"] = "Nowhere"
+    out, _ = compute_elo_history(df)
+    feat = build_features(out)
+    y = np.where(feat["home_score"] > feat["away_score"], 0,
+                 np.where(feat["home_score"] == feat["away_score"], 1, 2))
+    ol = OrderedLogit().fit(feat, y)
+    p = ol.predict_proba(feat)
+    assert np.allclose(p.sum(1), 1, atol=1e-9)
+    strong = feat["elo_diff"] > 150
+    assert p[strong.to_numpy(), 0].mean() > 0.5, "Elo 优势未转化为主胜概率"
 
 
 def test_rps_perfect_and_uniform():

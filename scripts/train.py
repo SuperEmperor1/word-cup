@@ -38,7 +38,7 @@ def main():
     ens = train_full(feat)
     os.makedirs("models", exist_ok=True)
     ens.save("models/ensemble.pkl")
-    print(f"   融合权重 w(DC)={ens.weight:.2f}, 温度 T={ens.temp:.2f}")
+    print(f"   元学习器温度 T={ens.temp:.2f}")
     print(f"   已保存 models/ensemble.pkl, 总耗时 {time.time()-t0:.1f}s")
 
 

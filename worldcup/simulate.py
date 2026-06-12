@@ -14,8 +14,24 @@ from collections import Counter, defaultdict
 
 import numpy as np
 import pandas as pd
+from scipy.optimize import minimize_scalar
+from scipy.special import expit
 
 from .markets import adjust_matrix
+
+
+def fit_shootout_slope(feat: pd.DataFrame, shootouts: pd.DataFrame) -> float:
+    """用历史点球大战拟合对称 Logistic: P(强队赢) = σ(b·Δelo/400)。"""
+    m = feat.merge(shootouts[["date", "home_team", "away_team", "winner"]],
+                   on=["date", "home_team", "away_team"])
+    d = (m["elo_home"] - m["elo_away"]).to_numpy() / 400.0
+    w = (m["winner"] == m["home_team"]).to_numpy(float)
+
+    def nll(b):
+        p = np.clip(expit(b * d), 1e-9, 1 - 1e-9)
+        return -(w * np.log(p) + (1 - w) * np.log(1 - p)).sum()
+
+    return float(minimize_scalar(nll, bounds=(0.0, 3.0), method="bounded").x)
 
 
 def infer_groups(fixtures: pd.DataFrame) -> list[list[str]]:
@@ -44,12 +60,14 @@ class TournamentSimulator:
     """预先计算所有球队两两对阵的 (经胜平负校准的) 比分分布, 再批量模拟。"""
 
     def __init__(self, ensemble, teams: list[str], elo: dict[str, float],
-                 feature_builder, max_goals: int = 8, seed: int = 7):
+                 feature_builder, max_goals: int = 8, seed: int = 7,
+                 shootout_slope: float = 0.6):
         self.teams = teams
         self.idx = {t: i for i, t in enumerate(teams)}
         self.elo = elo
         self.rng = np.random.default_rng(seed)
         self.mg = max_goals
+        self.so_slope = shootout_slope
         n = len(teams)
         self.cdf = np.zeros((n, n, (max_goals + 1) ** 2))
 
@@ -69,8 +87,8 @@ class TournamentSimulator:
         return divmod(min(k, (self.mg + 1) ** 2 - 1), self.mg + 1)
 
     def _penalty_win(self, ti: int, tj: int) -> bool:
-        d = self.elo[self.teams[ti]] - self.elo[self.teams[tj]]
-        return self.rng.random() < 1 / (1 + 10 ** (-d / 1200))
+        d = (self.elo[self.teams[ti]] - self.elo[self.teams[tj]]) / 400.0
+        return self.rng.random() < expit(self.so_slope * d)
 
     def _ko_winner(self, ti: int, tj: int) -> int:
         x, y = self.sample_score(ti, tj)

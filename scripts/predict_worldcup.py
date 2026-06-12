@@ -10,13 +10,11 @@ import pandas as pd
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
-from worldcup.data import load_matches
-from worldcup.elo import compute_elo_history
-from worldcup.features import build_features
+from worldcup.data import load_matches, load_shootouts
 from worldcup.markets import adjust_matrix, market_report
 from worldcup.model import Ensemble
-from worldcup.pipeline import hypothetical_rows
-from worldcup.simulate import TournamentSimulator, infer_groups
+from worldcup.pipeline import hypothetical_rows, prepare
+from worldcup.simulate import TournamentSimulator, fit_shootout_slope, infer_groups
 
 
 def main():
@@ -26,8 +24,7 @@ def main():
 
     ens = Ensemble.load("models/ensemble.pkl")
     raw = load_matches()
-    df, ratings = compute_elo_history(raw)
-    feat = build_features(df)
+    feat, ratings = prepare()
 
     wc = feat[(feat["tournament"] == "FIFA World Cup") & (~feat["played"])
               & (feat["date"] >= "2026-06-01")]
@@ -60,8 +57,9 @@ def main():
         pairs = [(a, b) for a in team_list for b in team_list if a != b]
         return hypothetical_rows(raw, pairs, start)
 
-    print(f"\n=== 蒙特卡洛模拟 ({args.sims} 次) ===")
-    sim = TournamentSimulator(ens, teams, ratings, builder)
+    slope = fit_shootout_slope(feat, load_shootouts())
+    print(f"\n=== 蒙特卡洛模拟 ({args.sims} 次, 点球模型斜率 b={slope:.2f}) ===")
+    sim = TournamentSimulator(ens, teams, ratings, builder, shootout_slope=slope)
     res = sim.simulate(groups, n_sims=args.sims)
 
     print(f"\n{'球队':<22}{'夺冠':>8}{'进决赛':>8}{'进四强':>8}{'出线':>8}")
