@@ -1,4 +1,10 @@
-"""端到端管线: 数据 -> Elo -> 特征 (52 维) -> 训练/预测。"""
+"""端到端管线: 数据 -> Elo -> 特征 (75 维) -> 训练/预测。
+
+外部商业数据 (data/external/) 自动发现并通过两条通路生效:
+  1. 特征通路: as-of 对齐进特征表, 历史快照积累后被 GBM 学习;
+  2. 即时调整通路: 伤停/状态 -> Elo 当量修正, 仅作用于未来比赛的预测行
+     (历史训练行不修正, 避免与特征通路重复计入)。
+"""
 from __future__ import annotations
 
 import numpy as np
@@ -7,24 +13,54 @@ import pandas as pd
 from .data import (K_WORLD_CUP, load_centroids, load_goal_events,
                    load_matches, outcome_labels)
 from .dixon_coles import DixonColes
-from .elo import compute_elo_history
+from .elo import compute_elo_history, expected_score
+from .external import ExternalData
 from .features import build_features
 from .model import Ensemble
 
 
-def prepare(path: str | None = None) -> tuple[pd.DataFrame, dict[str, float]]:
-    """加载全部数据源并构建 Elo + 52 维特征。返回 (特征表, 当前 Elo)。"""
+def prepare(path: str | None = None,
+            external: ExternalData | None = None
+            ) -> tuple[pd.DataFrame, dict[str, float]]:
+    """加载全部数据源并构建 Elo + 75 维特征。返回 (特征表, 当前 Elo)。"""
+    if external is None:
+        external = ExternalData.discover()
     df = load_matches(path) if path else load_matches()
     df, ratings = compute_elo_history(df)
     feat = build_features(df, goal_events=load_goal_events(),
-                          centroids=load_centroids())
+                          centroids=load_centroids(), external=external)
     return feat, ratings
+
+
+def apply_external_adjustments(rows: pd.DataFrame,
+                               external: ExternalData | None) -> pd.DataFrame:
+    """即时调整通路: 伤停/状态的 Elo 当量修正, 并重算派生列。"""
+    if external is None or external.fm is None:
+        return rows
+    rows = rows.copy()
+    d = rows["date"].to_numpy("datetime64[D]")
+    adj_h = np.array([external.elo_adjustment(t, dd)
+                      for t, dd in zip(rows["home_team"], d)])
+    adj_a = np.array([external.elo_adjustment(t, dd)
+                      for t, dd in zip(rows["away_team"], d)])
+    rows["elo_home"] = rows["elo_home"] + adj_h
+    rows["elo_away"] = rows["elo_away"] + adj_a
+    rows["elo_diff"] = rows["elo_home"] - rows["elo_away"] \
+        + np.where(rows["neutral"], 0.0, 80.0)
+    rows["elo_sum"] = rows["elo_home"] + rows["elo_away"]
+    rows["elo_exp_home"] = [
+        expected_score(eh, ea, ne) for eh, ea, ne in
+        zip(rows["elo_home"], rows["elo_away"], rows["neutral"])]
+    return rows
 
 
 def hypothetical_rows(raw: pd.DataFrame, pairs: list[tuple[str, str]],
                       date: pd.Timestamp, neutral: bool = True,
-                      country: str = "United States") -> pd.DataFrame:
+                      country: str = "United States",
+                      external: ExternalData | None = None) -> pd.DataFrame:
     """为任意对阵生成"截至 date"的特征行 (用于淘汰赛等未排程比赛)。"""
+    if external is None:
+        external = ExternalData.discover()
     fix = pd.DataFrame({
         "date": date, "home_team": [p[0] for p in pairs],
         "away_team": [p[1] for p in pairs],
@@ -37,8 +73,9 @@ def hypothetical_rows(raw: pd.DataFrame, pairs: list[tuple[str, str]],
         "date", kind="stable").reset_index(drop=True)
     alld, _ = compute_elo_history(alld)
     feat = build_features(alld, goal_events=load_goal_events(),
-                          centroids=load_centroids())
-    return feat[~feat["played"]].tail(len(pairs)).reset_index(drop=True)
+                          centroids=load_centroids(), external=external)
+    rows = feat[~feat["played"]].tail(len(pairs)).reset_index(drop=True)
+    return apply_external_adjustments(rows, external)
 
 
 def train_full(feat: pd.DataFrame, valid_years: int = 2) -> Ensemble:

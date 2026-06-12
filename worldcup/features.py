@@ -63,10 +63,21 @@ FEATURE_COLS = [
     # 球员级
     "late_goal_h", "late_goal_a", "late_concede_h", "late_concede_a",
     "pen_share_h", "pen_share_a", "scorer_hhi_h", "scorer_hhi_a",
+    "star_form_h", "star_form_a",
     # 经验与情境
     "major_exp_h", "major_exp_a", "confed_h", "confed_a", "same_confed",
     "h2h_gd", "neutral_f", "importance",
+    # 外部商业数据 (FM2026 阵容 / 转会身价 / 博彩市场), 缺失时为 NaN
+    "fm_xi_h", "fm_xi_a", "fm_xi_diff", "fm_depth_h", "fm_depth_a",
+    "fm_gk_h", "fm_gk_a", "fm_age_h", "fm_age_a",
+    "fm_stardep_h", "fm_stardep_a", "fm_cond_h", "fm_cond_a",
+    "fm_inj_h", "fm_inj_a",
+    "mv_log_h", "mv_log_a", "mv_diff",
+    "mkt_ph", "mkt_pd", "mkt_pa",
 ]
+
+STAR_WINDOW = 120        # 核心射手「近期」窗口 (天)
+STAR_BASELINE = 730      # 基准期 (天)
 
 
 def _haversine(lat1, lon1, lat2, lon2):
@@ -110,8 +121,13 @@ class _GoalEventIndex:
 
 def build_features(df: pd.DataFrame,
                    goal_events: pd.DataFrame | None = None,
-                   centroids: dict | None = None) -> pd.DataFrame:
-    """df 须已含 elo_home/elo_away/elo_exp_home (来自 elo.compute_elo_history)。"""
+                   centroids: dict | None = None,
+                   external=None) -> pd.DataFrame:
+    """df 须已含 elo_home/elo_away/elo_exp_home (来自 elo.compute_elo_history)。
+
+    external: worldcup.external.ExternalData, 缺省时外部特征列为 NaN
+    (HistGradientBoosting 原生处理缺失, 历史无快照不影响其余特征的学习)。
+    """
     n = len(df)
     home = df["home_team"].to_numpy()
     away = df["away_team"].to_numpy()
@@ -145,9 +161,12 @@ def build_features(df: pd.DataFrame,
     majors: dict[str, deque] = defaultdict(deque)    # 大赛日期
     confed: dict[str, int] = defaultdict(int)
 
-    cols = {c: np.zeros(n) for c in FEATURE_COLS
-            if c not in ("elo_home", "elo_away", "elo_diff", "elo_sum",
-                         "elo_exp_home", "neutral_f", "importance")}
+    _derived = ("elo_home", "elo_away", "elo_diff", "elo_sum",
+                "elo_exp_home", "neutral_f", "importance",
+                "fm_xi_diff", "mv_diff", "travel_diff")
+    cols = {c: (np.full(n, np.nan) if c.startswith(("fm_", "mv_", "mkt_"))
+                else np.zeros(n))
+            for c in FEATURE_COLS if c not in _derived}
 
     def elo_then(t, d):
         """t 在 d-365 天时的 Elo (无记录则取现值 -> 趋势 0)。"""
@@ -169,18 +188,31 @@ def build_features(df: pd.DataFrame,
         return (lgf / gf if gf else 0.25, lga / ga if ga else 0.25,
                 pen / gf if gf else 0.10, 0.0)
 
-    def scorer_hhi(t, d):
+    def scorer_stats(t, d):
+        """(射手集中度 HHI, 核心射手近期状态)。
+
+        star_form: 近 2 年队内前 3 射手在最近 120 天的进球占其总进球的
+        比例, 除以时间占比基准 —— >1 核心射手火热, <<1 核心哑火/缺阵。
+        这是球员可用性与状态的内生代理 (无需外部数据)。
+        """
         dq = scorers[t]
-        cut = d - np.timedelta64(730, "D")
+        cut = d - np.timedelta64(STAR_BASELINE, "D")
         while dq and dq[0][0] < cut:
             dq.popleft()
         if len(dq) < 5:
-            return 0.15
+            return 0.15, 1.0
         cnt = defaultdict(int)
         for _, s in dq:
             cnt[s] += 1
         tot = sum(cnt.values())
-        return sum((v / tot) ** 2 for v in cnt.values())
+        hhi = sum((v / tot) ** 2 for v in cnt.values())
+        top3 = {s for s, _ in sorted(cnt.items(), key=lambda kv: -kv[1])[:3]}
+        star_tot = sum(cnt[s] for s in top3)
+        recent_cut = d - np.timedelta64(STAR_WINDOW, "D")
+        star_recent = sum(1 for dd, s in dq if s in top3 and dd >= recent_cut)
+        form = (star_recent / star_tot) / (STAR_WINDOW / STAR_BASELINE) \
+            if star_tot else 1.0
+        return hhi, min(form, 3.0)
 
     for i in range(n):
         h, a, d = home[i], away[i], dates[i]
@@ -217,7 +249,14 @@ def build_features(df: pd.DataFrame,
             cols[f"late_goal_{side}"][i] = lg
             cols[f"late_concede_{side}"][i] = lc
             cols[f"pen_share_{side}"][i] = ps
-            cols[f"scorer_hhi_{side}"][i] = scorer_hhi(t, d)
+            hhi, star = scorer_stats(t, d)
+            cols[f"scorer_hhi_{side}"][i] = hhi
+            cols[f"star_form_{side}"][i] = star
+            # 外部商业数据 (as-of 防泄漏查询)
+            if external is not None:
+                for k, v in external.fm_features(t, d).items():
+                    cols[f"{k}_{side}"][i] = v
+                cols[f"mv_log_{side}"][i] = external.mv_log(t, d)
             # 经验 / 洲足联
             mj = majors[t]
             cut8 = d - np.timedelta64(365 * 8, "D")
@@ -234,6 +273,10 @@ def build_features(df: pd.DataFrame,
         cols["sd_xg_h"][i], cols["sd_xg_a"][i] = lam_h, lam_a
 
         cols["same_confed"][i] = float(confed[h] == confed[a] and confed[h] > 0)
+
+        if external is not None:
+            mkt = external.match_odds(date_strs[i], h, a)
+            cols["mkt_ph"][i], cols["mkt_pd"][i], cols["mkt_pa"][i] = mkt
 
         key = (h, a) if h < a else (a, h)
         past = h2h[key]
@@ -296,5 +339,7 @@ def build_features(df: pd.DataFrame,
         + np.where(out["neutral"], 0.0, 80.0)
     out["elo_sum"] = out["elo_home"] + out["elo_away"]
     out["travel_diff"] = out["travel_h"] - out["travel_a"]
+    out["fm_xi_diff"] = out["fm_xi_h"] - out["fm_xi_a"]
+    out["mv_diff"] = out["mv_log_h"] - out["mv_log_a"]
     out["neutral_f"] = out["neutral"].astype(float)
     return out

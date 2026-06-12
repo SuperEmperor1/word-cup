@@ -1,0 +1,1249 @@
+date,nation,player,position,age,current_ability,condition,injured
+2026-06-10,Algeria,Algeria Player 1,GK,24,148.0,0.844,0
+2026-06-10,Algeria,Algeria Player 2,GK,29,144.0,0.908,0
+2026-06-10,Algeria,Algeria Player 3,GK,26,143.6,0.949,0
+2026-06-10,Algeria,Algeria Player 4,DEF,26,143.7,0.926,0
+2026-06-10,Algeria,Algeria Player 5,DEF,25,146.7,0.915,0
+2026-06-10,Algeria,Algeria Player 6,DEF,25,146.5,0.911,1
+2026-06-10,Algeria,Algeria Player 7,DEF,29,152.7,0.891,0
+2026-06-10,Algeria,Algeria Player 8,DEF,22,142.0,0.873,0
+2026-06-10,Algeria,Algeria Player 9,DEF,25,148.3,0.953,0
+2026-06-10,Algeria,Algeria Player 10,DEF,23,143.5,0.899,0
+2026-06-10,Algeria,Algeria Player 11,DEF,28,143.8,0.928,0
+2026-06-10,Algeria,Algeria Player 12,MID,24,146.4,0.944,0
+2026-06-10,Algeria,Algeria Player 13,MID,34,132.1,1.0,0
+2026-06-10,Algeria,Algeria Player 14,MID,24,145.9,0.953,0
+2026-06-10,Algeria,Algeria Player 15,MID,30,132.7,0.919,0
+2026-06-10,Algeria,Algeria Player 16,MID,27,142.3,0.898,0
+2026-06-10,Algeria,Algeria Player 17,MID,23,128.0,0.863,0
+2026-06-10,Algeria,Algeria Player 18,MID,31,129.4,0.93,0
+2026-06-10,Algeria,Algeria Player 19,MID,27,121.7,0.892,0
+2026-06-10,Algeria,Algeria Player 20,ATT,24,138.1,0.938,0
+2026-06-10,Algeria,Algeria Player 21,ATT,24,138.3,0.913,0
+2026-06-10,Algeria,Algeria Player 22,ATT,24,130.1,0.939,0
+2026-06-10,Algeria,Algeria Player 23,ATT,22,125.0,0.912,0
+2026-06-10,Algeria,Algeria Player 24,ATT,29,131.7,0.842,0
+2026-06-10,Algeria,Algeria Player 25,ATT,22,128.1,1.0,0
+2026-06-10,Algeria,Algeria Player 26,ATT,27,120.2,0.878,0
+2026-06-10,Argentina,Argentina Player 1,GK,25,185.9,0.928,0
+2026-06-10,Argentina,Argentina Player 2,GK,28,179.7,0.966,0
+2026-06-10,Argentina,Argentina Player 3,GK,18,176.7,0.896,0
+2026-06-10,Argentina,Argentina Player 4,DEF,32,168.5,0.951,0
+2026-06-10,Argentina,Argentina Player 5,DEF,28,181.1,0.902,0
+2026-06-10,Argentina,Argentina Player 6,DEF,30,177.9,0.976,0
+2026-06-10,Argentina,Argentina Player 7,DEF,32,171.1,0.878,0
+2026-06-10,Argentina,Argentina Player 8,DEF,23,176.9,0.861,0
+2026-06-10,Argentina,Argentina Player 9,DEF,34,176.2,0.992,0
+2026-06-10,Argentina,Argentina Player 10,DEF,18,179.5,0.863,0
+2026-06-10,Argentina,Argentina Player 11,DEF,27,163.9,0.982,0
+2026-06-10,Argentina,Argentina Player 12,MID,28,168.6,0.928,0
+2026-06-10,Argentina,Argentina Player 13,MID,26,167.3,0.886,0
+2026-06-10,Argentina,Argentina Player 14,MID,22,164.4,0.83,1
+2026-06-10,Argentina,Argentina Player 15,MID,29,170.1,1.0,0
+2026-06-10,Argentina,Argentina Player 16,MID,23,181.5,0.883,0
+2026-06-10,Argentina,Argentina Player 17,MID,29,159.5,0.976,0
+2026-06-10,Argentina,Argentina Player 18,MID,28,159.9,0.972,0
+2026-06-10,Argentina,Argentina Player 19,MID,20,171.7,0.903,0
+2026-06-10,Argentina,Argentina Player 20,ATT,33,169.2,0.945,0
+2026-06-10,Argentina,Argentina Player 21,ATT,24,166.1,0.964,0
+2026-06-10,Argentina,Argentina Player 22,ATT,26,138.3,0.942,0
+2026-06-10,Argentina,Argentina Player 23,ATT,25,164.6,0.931,0
+2026-06-10,Argentina,Argentina Player 24,ATT,21,150.4,0.935,0
+2026-06-10,Argentina,Argentina Player 25,ATT,27,159.4,0.936,1
+2026-06-10,Argentina,Argentina Player 26,ATT,27,158.5,0.93,0
+2026-06-10,Australia,Australia Player 1,GK,29,149.2,0.901,0
+2026-06-10,Australia,Australia Player 2,GK,30,141.3,0.922,1
+2026-06-10,Australia,Australia Player 3,GK,24,143.3,0.858,0
+2026-06-10,Australia,Australia Player 4,DEF,21,142.5,0.898,0
+2026-06-10,Australia,Australia Player 5,DEF,28,144.3,0.891,0
+2026-06-10,Australia,Australia Player 6,DEF,23,143.4,0.911,0
+2026-06-10,Australia,Australia Player 7,DEF,32,152.7,1.0,0
+2026-06-10,Australia,Australia Player 8,DEF,29,147.6,0.939,0
+2026-06-10,Australia,Australia Player 9,DEF,35,148.1,0.946,0
+2026-06-10,Australia,Australia Player 10,DEF,23,145.6,0.917,0
+2026-06-10,Australia,Australia Player 11,DEF,26,142.7,0.957,0
+2026-06-10,Australia,Australia Player 12,MID,26,139.8,0.927,1
+2026-06-10,Australia,Australia Player 13,MID,29,152.1,0.953,0
+2026-06-10,Australia,Australia Player 14,MID,27,127.6,0.847,0
+2026-06-10,Australia,Australia Player 15,MID,27,133.3,0.837,0
+2026-06-10,Australia,Australia Player 16,MID,27,136.8,0.948,0
+2026-06-10,Australia,Australia Player 17,MID,25,138.6,0.914,0
+2026-06-10,Australia,Australia Player 18,MID,26,140.8,0.879,0
+2026-06-10,Australia,Australia Player 19,MID,32,134.4,0.93,0
+2026-06-10,Australia,Australia Player 20,ATT,35,139.3,0.927,0
+2026-06-10,Australia,Australia Player 21,ATT,22,135.3,0.894,0
+2026-06-10,Australia,Australia Player 22,ATT,23,134.8,0.893,0
+2026-06-10,Australia,Australia Player 23,ATT,26,132.6,1.0,0
+2026-06-10,Australia,Australia Player 24,ATT,27,130.5,0.878,0
+2026-06-10,Australia,Australia Player 25,ATT,32,129.8,0.987,0
+2026-06-10,Australia,Australia Player 26,ATT,20,124.7,0.878,0
+2026-06-10,Austria,Austria Player 1,GK,26,149.2,0.891,0
+2026-06-10,Austria,Austria Player 2,GK,27,152.4,0.896,0
+2026-06-10,Austria,Austria Player 3,GK,26,148.1,0.898,0
+2026-06-10,Austria,Austria Player 4,DEF,26,139.1,0.913,0
+2026-06-10,Austria,Austria Player 5,DEF,32,141.7,0.938,0
+2026-06-10,Austria,Austria Player 6,DEF,23,136.5,0.902,1
+2026-06-10,Austria,Austria Player 7,DEF,24,139.2,0.804,0
+2026-06-10,Austria,Austria Player 8,DEF,28,145.0,0.937,0
+2026-06-10,Austria,Austria Player 9,DEF,26,146.6,0.915,0
+2026-06-10,Austria,Austria Player 10,DEF,30,134.3,0.975,0
+2026-06-10,Austria,Austria Player 11,DEF,29,145.4,0.994,0
+2026-06-10,Austria,Austria Player 12,MID,27,140.6,0.881,0
+2026-06-10,Austria,Austria Player 13,MID,24,134.0,0.931,0
+2026-06-10,Austria,Austria Player 14,MID,24,134.0,0.94,0
+2026-06-10,Austria,Austria Player 15,MID,24,131.8,0.903,0
+2026-06-10,Austria,Austria Player 16,MID,33,141.4,0.921,0
+2026-06-10,Austria,Austria Player 17,MID,30,137.8,0.956,0
+2026-06-10,Austria,Austria Player 18,MID,23,120.9,0.919,0
+2026-06-10,Austria,Austria Player 19,MID,28,130.0,0.911,0
+2026-06-10,Austria,Austria Player 20,ATT,29,140.8,0.833,0
+2026-06-10,Austria,Austria Player 21,ATT,32,135.6,0.952,0
+2026-06-10,Austria,Austria Player 22,ATT,25,132.4,0.882,0
+2026-06-10,Austria,Austria Player 23,ATT,23,131.1,0.945,0
+2026-06-10,Austria,Austria Player 24,ATT,28,132.4,0.988,0
+2026-06-10,Austria,Austria Player 25,ATT,23,125.6,0.916,0
+2026-06-10,Austria,Austria Player 26,ATT,25,135.8,0.901,0
+2026-06-10,Belgium,Belgium Player 1,GK,29,158.7,0.95,0
+2026-06-10,Belgium,Belgium Player 2,GK,32,160.6,0.892,0
+2026-06-10,Belgium,Belgium Player 3,GK,23,154.5,0.873,0
+2026-06-10,Belgium,Belgium Player 4,DEF,37,161.9,0.949,0
+2026-06-10,Belgium,Belgium Player 5,DEF,28,159.4,0.916,0
+2026-06-10,Belgium,Belgium Player 6,DEF,21,146.4,0.846,0
+2026-06-10,Belgium,Belgium Player 7,DEF,28,155.0,0.912,0
+2026-06-10,Belgium,Belgium Player 8,DEF,27,146.1,0.881,1
+2026-06-10,Belgium,Belgium Player 9,DEF,27,148.0,0.889,0
+2026-06-10,Belgium,Belgium Player 10,DEF,27,155.6,0.856,0
+2026-06-10,Belgium,Belgium Player 11,DEF,26,146.5,0.896,0
+2026-06-10,Belgium,Belgium Player 12,MID,28,140.8,0.845,1
+2026-06-10,Belgium,Belgium Player 13,MID,32,147.0,0.827,0
+2026-06-10,Belgium,Belgium Player 14,MID,27,151.5,0.926,0
+2026-06-10,Belgium,Belgium Player 15,MID,30,151.8,0.893,0
+2026-06-10,Belgium,Belgium Player 16,MID,23,137.0,0.944,0
+2026-06-10,Belgium,Belgium Player 17,MID,27,144.6,0.954,1
+2026-06-10,Belgium,Belgium Player 18,MID,28,141.1,0.979,0
+2026-06-10,Belgium,Belgium Player 19,MID,23,144.1,0.886,0
+2026-06-10,Belgium,Belgium Player 20,ATT,30,142.9,0.796,0
+2026-06-10,Belgium,Belgium Player 21,ATT,23,143.4,0.979,0
+2026-06-10,Belgium,Belgium Player 22,ATT,29,132.1,0.875,0
+2026-06-10,Belgium,Belgium Player 23,ATT,28,145.5,0.843,0
+2026-06-10,Belgium,Belgium Player 24,ATT,30,139.0,1.0,0
+2026-06-10,Belgium,Belgium Player 25,ATT,27,140.0,0.898,0
+2026-06-10,Belgium,Belgium Player 26,ATT,28,142.4,0.911,0
+2026-06-10,Bosnia and Herzegovina,Bosnia and Herzegovina Player 1,GK,27,126.2,0.951,0
+2026-06-10,Bosnia and Herzegovina,Bosnia and Herzegovina Player 2,GK,26,133.2,0.921,0
+2026-06-10,Bosnia and Herzegovina,Bosnia and Herzegovina Player 3,GK,30,110.4,0.948,0
+2026-06-10,Bosnia and Herzegovina,Bosnia and Herzegovina Player 4,DEF,27,118.1,0.921,0
+2026-06-10,Bosnia and Herzegovina,Bosnia and Herzegovina Player 5,DEF,27,117.1,0.866,0
+2026-06-10,Bosnia and Herzegovina,Bosnia and Herzegovina Player 6,DEF,30,129.3,0.929,0
+2026-06-10,Bosnia and Herzegovina,Bosnia and Herzegovina Player 7,DEF,30,110.0,0.845,0
+2026-06-10,Bosnia and Herzegovina,Bosnia and Herzegovina Player 8,DEF,20,115.7,0.861,0
+2026-06-10,Bosnia and Herzegovina,Bosnia and Herzegovina Player 9,DEF,24,119.7,0.894,0
+2026-06-10,Bosnia and Herzegovina,Bosnia and Herzegovina Player 10,DEF,27,133.6,0.94,0
+2026-06-10,Bosnia and Herzegovina,Bosnia and Herzegovina Player 11,DEF,27,130.4,0.927,0
+2026-06-10,Bosnia and Herzegovina,Bosnia and Herzegovina Player 12,MID,25,120.8,0.968,0
+2026-06-10,Bosnia and Herzegovina,Bosnia and Herzegovina Player 13,MID,27,112.2,0.909,0
+2026-06-10,Bosnia and Herzegovina,Bosnia and Herzegovina Player 14,MID,28,104.9,0.909,0
+2026-06-10,Bosnia and Herzegovina,Bosnia and Herzegovina Player 15,MID,27,109.9,0.952,0
+2026-06-10,Bosnia and Herzegovina,Bosnia and Herzegovina Player 16,MID,25,103.5,0.889,0
+2026-06-10,Bosnia and Herzegovina,Bosnia and Herzegovina Player 17,MID,27,97.9,0.957,0
+2026-06-10,Bosnia and Herzegovina,Bosnia and Herzegovina Player 18,MID,23,116.0,0.967,0
+2026-06-10,Bosnia and Herzegovina,Bosnia and Herzegovina Player 19,MID,25,101.2,0.953,0
+2026-06-10,Bosnia and Herzegovina,Bosnia and Herzegovina Player 20,ATT,25,116.1,0.957,0
+2026-06-10,Bosnia and Herzegovina,Bosnia and Herzegovina Player 21,ATT,29,97.0,0.909,0
+2026-06-10,Bosnia and Herzegovina,Bosnia and Herzegovina Player 22,ATT,26,118.4,0.932,0
+2026-06-10,Bosnia and Herzegovina,Bosnia and Herzegovina Player 23,ATT,22,104.2,0.889,0
+2026-06-10,Bosnia and Herzegovina,Bosnia and Herzegovina Player 24,ATT,25,105.3,0.969,1
+2026-06-10,Bosnia and Herzegovina,Bosnia and Herzegovina Player 25,ATT,22,107.6,0.948,0
+2026-06-10,Bosnia and Herzegovina,Bosnia and Herzegovina Player 26,ATT,28,103.6,0.865,0
+2026-06-10,Brazil,Brazil Player 1,GK,28,171.1,0.931,0
+2026-06-10,Brazil,Brazil Player 2,GK,31,165.1,0.934,0
+2026-06-10,Brazil,Brazil Player 3,GK,26,169.4,0.95,1
+2026-06-10,Brazil,Brazil Player 4,DEF,27,163.8,0.882,0
+2026-06-10,Brazil,Brazil Player 5,DEF,25,153.5,0.926,1
+2026-06-10,Brazil,Brazil Player 6,DEF,21,156.3,0.917,0
+2026-06-10,Brazil,Brazil Player 7,DEF,27,161.9,0.946,0
+2026-06-10,Brazil,Brazil Player 8,DEF,22,163.2,0.865,0
+2026-06-10,Brazil,Brazil Player 9,DEF,24,152.6,0.932,0
+2026-06-10,Brazil,Brazil Player 10,DEF,26,156.4,0.852,0
+2026-06-10,Brazil,Brazil Player 11,DEF,27,155.4,0.972,0
+2026-06-10,Brazil,Brazil Player 12,MID,25,156.3,0.908,0
+2026-06-10,Brazil,Brazil Player 13,MID,28,155.3,0.96,0
+2026-06-10,Brazil,Brazil Player 14,MID,26,157.0,0.93,0
+2026-06-10,Brazil,Brazil Player 15,MID,26,156.2,0.965,0
+2026-06-10,Brazil,Brazil Player 16,MID,33,156.1,0.932,0
+2026-06-10,Brazil,Brazil Player 17,MID,26,146.4,0.943,0
+2026-06-10,Brazil,Brazil Player 18,MID,31,150.5,0.917,0
+2026-06-10,Brazil,Brazil Player 19,MID,19,148.0,0.898,0
+2026-06-10,Brazil,Brazil Player 20,ATT,25,154.3,0.912,0
+2026-06-10,Brazil,Brazil Player 21,ATT,34,158.4,0.958,0
+2026-06-10,Brazil,Brazil Player 22,ATT,25,143.6,0.886,0
+2026-06-10,Brazil,Brazil Player 23,ATT,32,143.1,0.939,0
+2026-06-10,Brazil,Brazil Player 24,ATT,22,151.8,0.893,0
+2026-06-10,Brazil,Brazil Player 25,ATT,33,146.3,0.918,0
+2026-06-10,Brazil,Brazil Player 26,ATT,28,140.8,0.922,0
+2026-06-10,Canada,Canada Player 1,GK,24,152.5,0.965,0
+2026-06-10,Canada,Canada Player 2,GK,31,140.9,0.971,0
+2026-06-10,Canada,Canada Player 3,GK,29,129.2,0.956,0
+2026-06-10,Canada,Canada Player 4,DEF,33,146.7,0.881,0
+2026-06-10,Canada,Canada Player 5,DEF,28,146.6,0.895,0
+2026-06-10,Canada,Canada Player 6,DEF,32,142.5,0.917,1
+2026-06-10,Canada,Canada Player 7,DEF,31,149.8,0.879,0
+2026-06-10,Canada,Canada Player 8,DEF,20,141.9,0.883,0
+2026-06-10,Canada,Canada Player 9,DEF,28,139.9,0.907,0
+2026-06-10,Canada,Canada Player 10,DEF,26,150.0,0.883,0
+2026-06-10,Canada,Canada Player 11,DEF,31,137.4,0.977,0
+2026-06-10,Canada,Canada Player 12,MID,22,135.5,0.922,0
+2026-06-10,Canada,Canada Player 13,MID,28,134.7,0.917,0
+2026-06-10,Canada,Canada Player 14,MID,31,132.8,0.911,0
+2026-06-10,Canada,Canada Player 15,MID,22,142.4,0.943,0
+2026-06-10,Canada,Canada Player 16,MID,26,141.2,0.959,0
+2026-06-10,Canada,Canada Player 17,MID,26,137.2,0.904,1
+2026-06-10,Canada,Canada Player 18,MID,30,134.7,0.914,0
+2026-06-10,Canada,Canada Player 19,MID,29,129.0,0.894,0
+2026-06-10,Canada,Canada Player 20,ATT,28,131.5,0.968,0
+2026-06-10,Canada,Canada Player 21,ATT,20,127.2,0.861,0
+2026-06-10,Canada,Canada Player 22,ATT,28,131.9,0.827,0
+2026-06-10,Canada,Canada Player 23,ATT,26,119.7,0.958,0
+2026-06-10,Canada,Canada Player 24,ATT,26,129.2,0.882,0
+2026-06-10,Canada,Canada Player 25,ATT,20,128.9,0.936,0
+2026-06-10,Canada,Canada Player 26,ATT,26,122.3,0.93,0
+2026-06-10,Cape Verde,Cape Verde Player 1,GK,25,124.1,0.912,0
+2026-06-10,Cape Verde,Cape Verde Player 2,GK,31,130.2,0.946,0
+2026-06-10,Cape Verde,Cape Verde Player 3,GK,33,123.4,0.864,0
+2026-06-10,Cape Verde,Cape Verde Player 4,DEF,23,131.5,0.989,0
+2026-06-10,Cape Verde,Cape Verde Player 5,DEF,23,115.4,0.917,0
+2026-06-10,Cape Verde,Cape Verde Player 6,DEF,22,124.0,0.837,0
+2026-06-10,Cape Verde,Cape Verde Player 7,DEF,26,119.1,0.916,0
+2026-06-10,Cape Verde,Cape Verde Player 8,DEF,28,127.3,0.849,0
+2026-06-10,Cape Verde,Cape Verde Player 9,DEF,22,120.6,0.852,0
+2026-06-10,Cape Verde,Cape Verde Player 10,DEF,27,122.9,0.881,0
+2026-06-10,Cape Verde,Cape Verde Player 11,DEF,29,110.5,0.911,0
+2026-06-10,Cape Verde,Cape Verde Player 12,MID,31,117.4,0.999,0
+2026-06-10,Cape Verde,Cape Verde Player 13,MID,28,110.9,0.977,0
+2026-06-10,Cape Verde,Cape Verde Player 14,MID,31,108.8,0.942,0
+2026-06-10,Cape Verde,Cape Verde Player 15,MID,31,106.0,0.893,0
+2026-06-10,Cape Verde,Cape Verde Player 16,MID,31,114.5,0.975,0
+2026-06-10,Cape Verde,Cape Verde Player 17,MID,26,112.9,0.931,0
+2026-06-10,Cape Verde,Cape Verde Player 18,MID,30,111.2,0.901,0
+2026-06-10,Cape Verde,Cape Verde Player 19,MID,20,105.3,0.955,0
+2026-06-10,Cape Verde,Cape Verde Player 20,ATT,26,106.6,0.911,0
+2026-06-10,Cape Verde,Cape Verde Player 21,ATT,25,110.8,0.837,0
+2026-06-10,Cape Verde,Cape Verde Player 22,ATT,35,108.9,0.917,0
+2026-06-10,Cape Verde,Cape Verde Player 23,ATT,29,101.2,0.887,0
+2026-06-10,Cape Verde,Cape Verde Player 24,ATT,27,102.6,0.911,0
+2026-06-10,Cape Verde,Cape Verde Player 25,ATT,24,104.7,0.877,1
+2026-06-10,Cape Verde,Cape Verde Player 26,ATT,26,92.5,0.872,0
+2026-06-10,Colombia,Colombia Player 1,GK,25,164.4,0.904,0
+2026-06-10,Colombia,Colombia Player 2,GK,26,158.8,0.914,0
+2026-06-10,Colombia,Colombia Player 3,GK,29,162.8,0.948,0
+2026-06-10,Colombia,Colombia Player 4,DEF,25,167.2,0.929,0
+2026-06-10,Colombia,Colombia Player 5,DEF,26,162.0,0.971,0
+2026-06-10,Colombia,Colombia Player 6,DEF,32,165.3,0.835,0
+2026-06-10,Colombia,Colombia Player 7,DEF,29,151.1,0.939,0
+2026-06-10,Colombia,Colombia Player 8,DEF,26,167.5,0.973,0
+2026-06-10,Colombia,Colombia Player 9,DEF,26,159.4,0.938,0
+2026-06-10,Colombia,Colombia Player 10,DEF,26,147.4,0.906,0
+2026-06-10,Colombia,Colombia Player 11,DEF,20,149.1,0.904,0
+2026-06-10,Colombia,Colombia Player 12,MID,22,156.6,0.884,0
+2026-06-10,Colombia,Colombia Player 13,MID,30,156.9,0.937,1
+2026-06-10,Colombia,Colombia Player 14,MID,29,141.3,0.935,0
+2026-06-10,Colombia,Colombia Player 15,MID,28,158.5,0.937,0
+2026-06-10,Colombia,Colombia Player 16,MID,22,155.4,0.916,0
+2026-06-10,Colombia,Colombia Player 17,MID,31,148.9,0.893,0
+2026-06-10,Colombia,Colombia Player 18,MID,25,157.5,0.853,0
+2026-06-10,Colombia,Colombia Player 19,MID,18,146.1,0.937,0
+2026-06-10,Colombia,Colombia Player 20,ATT,22,147.3,0.96,0
+2026-06-10,Colombia,Colombia Player 21,ATT,32,152.8,0.934,0
+2026-06-10,Colombia,Colombia Player 22,ATT,22,142.1,0.972,0
+2026-06-10,Colombia,Colombia Player 23,ATT,30,148.4,0.887,0
+2026-06-10,Colombia,Colombia Player 24,ATT,30,152.8,0.875,0
+2026-06-10,Colombia,Colombia Player 25,ATT,26,150.7,0.906,0
+2026-06-10,Colombia,Colombia Player 26,ATT,30,148.3,0.892,1
+2026-06-10,Croatia,Croatia Player 1,GK,25,157.6,0.927,0
+2026-06-10,Croatia,Croatia Player 2,GK,21,154.2,0.932,0
+2026-06-10,Croatia,Croatia Player 3,GK,29,146.3,0.978,0
+2026-06-10,Croatia,Croatia Player 4,DEF,28,149.0,0.927,0
+2026-06-10,Croatia,Croatia Player 5,DEF,26,152.9,0.933,0
+2026-06-10,Croatia,Croatia Player 6,DEF,26,155.0,0.9,0
+2026-06-10,Croatia,Croatia Player 7,DEF,26,140.6,0.952,0
+2026-06-10,Croatia,Croatia Player 8,DEF,28,148.5,0.906,0
+2026-06-10,Croatia,Croatia Player 9,DEF,29,153.4,0.903,0
+2026-06-10,Croatia,Croatia Player 10,DEF,23,138.9,0.958,0
+2026-06-10,Croatia,Croatia Player 11,DEF,24,149.2,0.866,0
+2026-06-10,Croatia,Croatia Player 12,MID,24,139.3,0.897,0
+2026-06-10,Croatia,Croatia Player 13,MID,27,153.8,0.947,0
+2026-06-10,Croatia,Croatia Player 14,MID,24,143.0,0.924,0
+2026-06-10,Croatia,Croatia Player 15,MID,27,136.4,0.99,0
+2026-06-10,Croatia,Croatia Player 16,MID,26,147.6,0.888,0
+2026-06-10,Croatia,Croatia Player 17,MID,21,137.3,0.824,0
+2026-06-10,Croatia,Croatia Player 18,MID,22,136.8,0.948,1
+2026-06-10,Croatia,Croatia Player 19,MID,30,144.0,0.953,1
+2026-06-10,Croatia,Croatia Player 20,ATT,26,143.7,0.948,0
+2026-06-10,Croatia,Croatia Player 21,ATT,24,131.9,0.867,0
+2026-06-10,Croatia,Croatia Player 22,ATT,26,130.5,0.91,0
+2026-06-10,Croatia,Croatia Player 23,ATT,30,133.4,0.94,0
+2026-06-10,Croatia,Croatia Player 24,ATT,24,136.7,0.892,0
+2026-06-10,Croatia,Croatia Player 25,ATT,27,129.4,0.922,0
+2026-06-10,Croatia,Croatia Player 26,ATT,28,139.0,0.923,0
+2026-06-10,Curaçao,Curaçao Player 1,GK,23,118.1,0.893,0
+2026-06-10,Curaçao,Curaçao Player 2,GK,23,114.0,0.899,0
+2026-06-10,Curaçao,Curaçao Player 3,GK,25,118.1,0.872,1
+2026-06-10,Curaçao,Curaçao Player 4,DEF,19,117.7,0.895,0
+2026-06-10,Curaçao,Curaçao Player 5,DEF,30,116.7,0.955,1
+2026-06-10,Curaçao,Curaçao Player 6,DEF,27,110.8,0.934,0
+2026-06-10,Curaçao,Curaçao Player 7,DEF,24,111.1,0.866,0
+2026-06-10,Curaçao,Curaçao Player 8,DEF,28,112.2,0.94,0
+2026-06-10,Curaçao,Curaçao Player 9,DEF,26,110.8,0.994,0
+2026-06-10,Curaçao,Curaçao Player 10,DEF,33,105.5,0.904,0
+2026-06-10,Curaçao,Curaçao Player 11,DEF,28,108.9,0.926,0
+2026-06-10,Curaçao,Curaçao Player 12,MID,35,110.7,0.945,0
+2026-06-10,Curaçao,Curaçao Player 13,MID,32,106.8,0.938,0
+2026-06-10,Curaçao,Curaçao Player 14,MID,17,120.2,0.96,0
+2026-06-10,Curaçao,Curaçao Player 15,MID,23,96.2,0.908,0
+2026-06-10,Curaçao,Curaçao Player 16,MID,29,105.2,0.968,0
+2026-06-10,Curaçao,Curaçao Player 17,MID,27,111.2,0.891,0
+2026-06-10,Curaçao,Curaçao Player 18,MID,24,99.5,0.977,0
+2026-06-10,Curaçao,Curaçao Player 19,MID,28,110.5,0.932,0
+2026-06-10,Curaçao,Curaçao Player 20,ATT,23,101.1,0.933,0
+2026-06-10,Curaçao,Curaçao Player 21,ATT,24,93.8,0.945,1
+2026-06-10,Curaçao,Curaçao Player 22,ATT,27,103.5,0.912,0
+2026-06-10,Curaçao,Curaçao Player 23,ATT,27,102.1,0.971,0
+2026-06-10,Curaçao,Curaçao Player 24,ATT,27,91.7,0.975,0
+2026-06-10,Curaçao,Curaçao Player 25,ATT,27,95.5,0.895,0
+2026-06-10,Curaçao,Curaçao Player 26,ATT,28,91.5,0.936,0
+2026-06-10,Czech Republic,Czech Republic Player 1,GK,29,141.8,0.938,0
+2026-06-10,Czech Republic,Czech Republic Player 2,GK,30,157.2,0.924,0
+2026-06-10,Czech Republic,Czech Republic Player 3,GK,23,131.3,0.987,0
+2026-06-10,Czech Republic,Czech Republic Player 4,DEF,25,131.3,0.881,0
+2026-06-10,Czech Republic,Czech Republic Player 5,DEF,26,127.0,0.889,0
+2026-06-10,Czech Republic,Czech Republic Player 6,DEF,26,128.9,0.87,0
+2026-06-10,Czech Republic,Czech Republic Player 7,DEF,23,131.9,0.956,0
+2026-06-10,Czech Republic,Czech Republic Player 8,DEF,27,133.7,0.879,0
+2026-06-10,Czech Republic,Czech Republic Player 9,DEF,25,114.0,0.9,0
+2026-06-10,Czech Republic,Czech Republic Player 10,DEF,26,129.6,0.925,0
+2026-06-10,Czech Republic,Czech Republic Player 11,DEF,32,130.4,0.951,0
+2026-06-10,Czech Republic,Czech Republic Player 12,MID,27,130.5,0.908,0
+2026-06-10,Czech Republic,Czech Republic Player 13,MID,22,130.6,0.915,0
+2026-06-10,Czech Republic,Czech Republic Player 14,MID,24,127.7,0.94,0
+2026-06-10,Czech Republic,Czech Republic Player 15,MID,26,125.4,0.928,0
+2026-06-10,Czech Republic,Czech Republic Player 16,MID,34,129.0,0.861,0
+2026-06-10,Czech Republic,Czech Republic Player 17,MID,22,119.2,0.99,0
+2026-06-10,Czech Republic,Czech Republic Player 18,MID,24,132.4,0.922,0
+2026-06-10,Czech Republic,Czech Republic Player 19,MID,27,115.0,0.884,0
+2026-06-10,Czech Republic,Czech Republic Player 20,ATT,17,126.9,0.929,0
+2026-06-10,Czech Republic,Czech Republic Player 21,ATT,25,124.4,0.88,0
+2026-06-10,Czech Republic,Czech Republic Player 22,ATT,27,121.2,0.919,0
+2026-06-10,Czech Republic,Czech Republic Player 23,ATT,25,123.0,0.933,0
+2026-06-10,Czech Republic,Czech Republic Player 24,ATT,28,109.1,0.897,0
+2026-06-10,Czech Republic,Czech Republic Player 25,ATT,25,122.9,0.938,0
+2026-06-10,Czech Republic,Czech Republic Player 26,ATT,22,113.9,0.892,0
+2026-06-10,DR Congo,DR Congo Player 1,GK,24,122.2,0.997,1
+2026-06-10,DR Congo,DR Congo Player 2,GK,29,132.6,0.883,0
+2026-06-10,DR Congo,DR Congo Player 3,GK,23,140.8,0.931,1
+2026-06-10,DR Congo,DR Congo Player 4,DEF,24,128.9,0.894,0
+2026-06-10,DR Congo,DR Congo Player 5,DEF,28,125.1,0.949,0
+2026-06-10,DR Congo,DR Congo Player 6,DEF,27,130.5,0.903,0
+2026-06-10,DR Congo,DR Congo Player 7,DEF,27,142.9,0.867,0
+2026-06-10,DR Congo,DR Congo Player 8,DEF,25,120.7,0.865,0
+2026-06-10,DR Congo,DR Congo Player 9,DEF,26,124.1,0.925,0
+2026-06-10,DR Congo,DR Congo Player 10,DEF,23,131.9,0.948,0
+2026-06-10,DR Congo,DR Congo Player 11,DEF,29,122.4,0.873,1
+2026-06-10,DR Congo,DR Congo Player 12,MID,29,109.9,0.952,0
+2026-06-10,DR Congo,DR Congo Player 13,MID,24,121.7,0.959,0
+2026-06-10,DR Congo,DR Congo Player 14,MID,27,127.7,1.0,1
+2026-06-10,DR Congo,DR Congo Player 15,MID,23,125.3,0.944,0
+2026-06-10,DR Congo,DR Congo Player 16,MID,25,134.2,0.905,0
+2026-06-10,DR Congo,DR Congo Player 17,MID,17,125.5,0.967,0
+2026-06-10,DR Congo,DR Congo Player 18,MID,28,117.8,0.919,0
+2026-06-10,DR Congo,DR Congo Player 19,MID,26,124.2,0.896,0
+2026-06-10,DR Congo,DR Congo Player 20,ATT,23,125.0,0.883,0
+2026-06-10,DR Congo,DR Congo Player 21,ATT,22,104.7,0.894,1
+2026-06-10,DR Congo,DR Congo Player 22,ATT,30,121.5,0.929,0
+2026-06-10,DR Congo,DR Congo Player 23,ATT,28,107.0,0.889,0
+2026-06-10,DR Congo,DR Congo Player 24,ATT,30,108.7,0.903,0
+2026-06-10,DR Congo,DR Congo Player 25,ATT,26,113.0,0.872,0
+2026-06-10,DR Congo,DR Congo Player 26,ATT,29,108.8,0.836,0
+2026-06-10,Ecuador,Ecuador Player 1,GK,23,156.0,0.955,1
+2026-06-10,Ecuador,Ecuador Player 2,GK,29,164.4,0.897,0
+2026-06-10,Ecuador,Ecuador Player 3,GK,29,166.3,0.907,0
+2026-06-10,Ecuador,Ecuador Player 4,DEF,23,162.8,0.922,0
+2026-06-10,Ecuador,Ecuador Player 5,DEF,25,156.7,0.894,0
+2026-06-10,Ecuador,Ecuador Player 6,DEF,21,157.2,0.901,0
+2026-06-10,Ecuador,Ecuador Player 7,DEF,26,160.8,0.87,0
+2026-06-10,Ecuador,Ecuador Player 8,DEF,29,159.4,0.907,0
+2026-06-10,Ecuador,Ecuador Player 9,DEF,32,153.1,0.871,0
+2026-06-10,Ecuador,Ecuador Player 10,DEF,28,149.2,0.935,0
+2026-06-10,Ecuador,Ecuador Player 11,DEF,26,158.8,0.914,0
+2026-06-10,Ecuador,Ecuador Player 12,MID,32,155.7,0.923,0
+2026-06-10,Ecuador,Ecuador Player 13,MID,22,141.2,0.917,0
+2026-06-10,Ecuador,Ecuador Player 14,MID,28,156.5,0.858,0
+2026-06-10,Ecuador,Ecuador Player 15,MID,23,152.3,0.931,0
+2026-06-10,Ecuador,Ecuador Player 16,MID,24,151.0,0.922,0
+2026-06-10,Ecuador,Ecuador Player 17,MID,24,147.1,0.879,0
+2026-06-10,Ecuador,Ecuador Player 18,MID,30,150.0,0.958,0
+2026-06-10,Ecuador,Ecuador Player 19,MID,31,156.5,0.891,0
+2026-06-10,Ecuador,Ecuador Player 20,ATT,31,143.1,0.849,0
+2026-06-10,Ecuador,Ecuador Player 21,ATT,30,142.1,0.95,0
+2026-06-10,Ecuador,Ecuador Player 22,ATT,22,146.8,0.92,1
+2026-06-10,Ecuador,Ecuador Player 23,ATT,21,152.8,0.884,0
+2026-06-10,Ecuador,Ecuador Player 24,ATT,29,139.8,0.967,0
+2026-06-10,Ecuador,Ecuador Player 25,ATT,26,145.2,0.925,0
+2026-06-10,Ecuador,Ecuador Player 26,ATT,30,135.5,0.942,0
+2026-06-10,Egypt,Egypt Player 1,GK,29,148.2,0.903,0
+2026-06-10,Egypt,Egypt Player 2,GK,37,132.1,0.888,0
+2026-06-10,Egypt,Egypt Player 3,GK,25,139.9,0.867,0
+2026-06-10,Egypt,Egypt Player 4,DEF,25,140.6,0.919,1
+2026-06-10,Egypt,Egypt Player 5,DEF,26,136.9,0.884,0
+2026-06-10,Egypt,Egypt Player 6,DEF,22,130.2,0.998,0
+2026-06-10,Egypt,Egypt Player 7,DEF,23,142.4,0.893,0
+2026-06-10,Egypt,Egypt Player 8,DEF,19,127.6,0.94,0
+2026-06-10,Egypt,Egypt Player 9,DEF,27,132.8,0.897,1
+2026-06-10,Egypt,Egypt Player 10,DEF,29,131.5,0.959,0
+2026-06-10,Egypt,Egypt Player 11,DEF,32,128.4,0.927,0
+2026-06-10,Egypt,Egypt Player 12,MID,29,125.9,0.944,0
+2026-06-10,Egypt,Egypt Player 13,MID,26,130.7,0.89,0
+2026-06-10,Egypt,Egypt Player 14,MID,24,125.3,0.945,0
+2026-06-10,Egypt,Egypt Player 15,MID,24,132.7,0.947,0
+2026-06-10,Egypt,Egypt Player 16,MID,35,120.6,0.984,0
+2026-06-10,Egypt,Egypt Player 17,MID,30,124.3,0.966,0
+2026-06-10,Egypt,Egypt Player 18,MID,29,126.9,0.955,0
+2026-06-10,Egypt,Egypt Player 19,MID,28,119.8,0.905,1
+2026-06-10,Egypt,Egypt Player 20,ATT,24,120.8,0.871,0
+2026-06-10,Egypt,Egypt Player 21,ATT,32,139.9,0.886,0
+2026-06-10,Egypt,Egypt Player 22,ATT,28,125.1,0.868,0
+2026-06-10,Egypt,Egypt Player 23,ATT,30,122.9,0.973,0
+2026-06-10,Egypt,Egypt Player 24,ATT,26,128.9,0.913,0
+2026-06-10,Egypt,Egypt Player 25,ATT,26,125.9,0.925,1
+2026-06-10,Egypt,Egypt Player 26,ATT,27,121.0,0.925,0
+2026-06-10,England,England Player 1,GK,27,166.6,0.934,0
+2026-06-10,England,England Player 2,GK,20,173.6,0.988,0
+2026-06-10,England,England Player 3,GK,29,161.5,0.947,0
+2026-06-10,England,England Player 4,DEF,27,168.6,0.888,1
+2026-06-10,England,England Player 5,DEF,25,161.0,0.907,0
+2026-06-10,England,England Player 6,DEF,30,161.9,0.937,0
+2026-06-10,England,England Player 7,DEF,24,172.3,0.885,0
+2026-06-10,England,England Player 8,DEF,34,161.9,0.98,0
+2026-06-10,England,England Player 9,DEF,25,160.8,0.898,0
+2026-06-10,England,England Player 10,DEF,20,154.0,0.972,0
+2026-06-10,England,England Player 11,DEF,28,169.6,0.85,0
+2026-06-10,England,England Player 12,MID,33,150.5,0.923,0
+2026-06-10,England,England Player 13,MID,17,157.4,0.938,0
+2026-06-10,England,England Player 14,MID,18,158.9,0.995,0
+2026-06-10,England,England Player 15,MID,29,157.9,0.845,0
+2026-06-10,England,England Player 16,MID,27,154.6,0.97,0
+2026-06-10,England,England Player 17,MID,31,170.4,0.928,0
+2026-06-10,England,England Player 18,MID,24,163.1,0.87,0
+2026-06-10,England,England Player 19,MID,26,152.1,0.891,0
+2026-06-10,England,England Player 20,ATT,25,139.5,0.966,0
+2026-06-10,England,England Player 21,ATT,25,159.7,0.899,0
+2026-06-10,England,England Player 22,ATT,23,160.6,0.975,1
+2026-06-10,England,England Player 23,ATT,23,154.8,0.877,0
+2026-06-10,England,England Player 24,ATT,25,145.8,0.899,0
+2026-06-10,England,England Player 25,ATT,20,147.5,0.877,0
+2026-06-10,England,England Player 26,ATT,31,138.2,0.86,0
+2026-06-10,France,France Player 1,GK,28,161.0,0.883,0
+2026-06-10,France,France Player 2,GK,26,173.1,0.924,0
+2026-06-10,France,France Player 3,GK,26,177.5,0.916,1
+2026-06-10,France,France Player 4,DEF,25,169.0,0.876,0
+2026-06-10,France,France Player 5,DEF,25,168.2,0.9,0
+2026-06-10,France,France Player 6,DEF,24,158.4,0.859,0
+2026-06-10,France,France Player 7,DEF,23,165.9,0.862,0
+2026-06-10,France,France Player 8,DEF,26,171.5,0.875,0
+2026-06-10,France,France Player 9,DEF,26,165.1,0.9,0
+2026-06-10,France,France Player 10,DEF,20,158.4,0.917,0
+2026-06-10,France,France Player 11,DEF,27,162.5,0.907,0
+2026-06-10,France,France Player 12,MID,23,160.1,0.936,0
+2026-06-10,France,France Player 13,MID,27,166.0,0.925,0
+2026-06-10,France,France Player 14,MID,25,158.5,0.994,0
+2026-06-10,France,France Player 15,MID,30,155.4,0.908,0
+2026-06-10,France,France Player 16,MID,27,151.1,0.881,0
+2026-06-10,France,France Player 17,MID,32,160.9,0.887,0
+2026-06-10,France,France Player 18,MID,26,146.9,0.916,0
+2026-06-10,France,France Player 19,MID,26,150.8,0.932,0
+2026-06-10,France,France Player 20,ATT,24,166.5,0.902,0
+2026-06-10,France,France Player 21,ATT,31,163.1,0.879,0
+2026-06-10,France,France Player 22,ATT,26,151.4,0.862,1
+2026-06-10,France,France Player 23,ATT,34,149.3,0.896,0
+2026-06-10,France,France Player 24,ATT,25,148.1,0.875,0
+2026-06-10,France,France Player 25,ATT,27,158.0,0.9,0
+2026-06-10,France,France Player 26,ATT,27,147.3,0.935,0
+2026-06-10,Germany,Germany Player 1,GK,26,158.3,0.946,0
+2026-06-10,Germany,Germany Player 2,GK,29,163.2,0.961,0
+2026-06-10,Germany,Germany Player 3,GK,25,150.9,0.923,0
+2026-06-10,Germany,Germany Player 4,DEF,22,151.4,0.92,0
+2026-06-10,Germany,Germany Player 5,DEF,30,156.8,0.951,1
+2026-06-10,Germany,Germany Player 6,DEF,28,148.5,0.891,0
+2026-06-10,Germany,Germany Player 7,DEF,24,151.5,0.931,0
+2026-06-10,Germany,Germany Player 8,DEF,32,161.3,0.877,0
+2026-06-10,Germany,Germany Player 9,DEF,21,155.0,0.868,0
+2026-06-10,Germany,Germany Player 10,DEF,30,155.7,0.933,0
+2026-06-10,Germany,Germany Player 11,DEF,22,155.5,0.945,0
+2026-06-10,Germany,Germany Player 12,MID,29,143.1,0.82,0
+2026-06-10,Germany,Germany Player 13,MID,32,145.4,0.886,0
+2026-06-10,Germany,Germany Player 14,MID,30,153.6,0.87,0
+2026-06-10,Germany,Germany Player 15,MID,24,151.9,0.948,0
+2026-06-10,Germany,Germany Player 16,MID,23,149.4,0.909,0
+2026-06-10,Germany,Germany Player 17,MID,25,150.5,0.904,0
+2026-06-10,Germany,Germany Player 18,MID,24,149.6,0.897,0
+2026-06-10,Germany,Germany Player 19,MID,27,142.9,0.885,1
+2026-06-10,Germany,Germany Player 20,ATT,25,150.5,0.884,0
+2026-06-10,Germany,Germany Player 21,ATT,31,147.6,0.948,0
+2026-06-10,Germany,Germany Player 22,ATT,28,145.7,0.854,0
+2026-06-10,Germany,Germany Player 23,ATT,22,131.0,0.918,0
+2026-06-10,Germany,Germany Player 24,ATT,24,144.5,0.942,0
+2026-06-10,Germany,Germany Player 25,ATT,25,144.7,0.99,0
+2026-06-10,Germany,Germany Player 26,ATT,29,133.0,0.954,0
+2026-06-10,Ghana,Ghana Player 1,GK,26,120.6,0.912,0
+2026-06-10,Ghana,Ghana Player 2,GK,21,116.1,0.946,0
+2026-06-10,Ghana,Ghana Player 3,GK,26,116.5,0.958,0
+2026-06-10,Ghana,Ghana Player 4,DEF,22,110.7,0.903,1
+2026-06-10,Ghana,Ghana Player 5,DEF,30,116.0,0.973,0
+2026-06-10,Ghana,Ghana Player 6,DEF,23,117.0,0.961,0
+2026-06-10,Ghana,Ghana Player 7,DEF,28,112.4,0.898,1
+2026-06-10,Ghana,Ghana Player 8,DEF,30,108.1,0.915,0
+2026-06-10,Ghana,Ghana Player 9,DEF,26,114.6,0.952,0
+2026-06-10,Ghana,Ghana Player 10,DEF,26,111.5,0.982,0
+2026-06-10,Ghana,Ghana Player 11,DEF,22,118.7,0.971,0
+2026-06-10,Ghana,Ghana Player 12,MID,30,113.5,0.917,0
+2026-06-10,Ghana,Ghana Player 13,MID,33,115.0,0.945,0
+2026-06-10,Ghana,Ghana Player 14,MID,25,107.9,0.916,0
+2026-06-10,Ghana,Ghana Player 15,MID,29,115.9,0.918,0
+2026-06-10,Ghana,Ghana Player 16,MID,24,117.8,0.898,0
+2026-06-10,Ghana,Ghana Player 17,MID,26,100.1,0.862,0
+2026-06-10,Ghana,Ghana Player 18,MID,28,113.9,0.972,0
+2026-06-10,Ghana,Ghana Player 19,MID,24,110.8,0.914,0
+2026-06-10,Ghana,Ghana Player 20,ATT,34,103.7,0.868,0
+2026-06-10,Ghana,Ghana Player 21,ATT,26,103.2,0.857,0
+2026-06-10,Ghana,Ghana Player 22,ATT,30,105.1,0.967,0
+2026-06-10,Ghana,Ghana Player 23,ATT,31,107.5,0.994,0
+2026-06-10,Ghana,Ghana Player 24,ATT,22,107.4,0.938,0
+2026-06-10,Ghana,Ghana Player 25,ATT,27,106.8,0.969,0
+2026-06-10,Ghana,Ghana Player 26,ATT,27,103.4,0.922,0
+2026-06-10,Haiti,Haiti Player 1,GK,26,136.7,0.903,0
+2026-06-10,Haiti,Haiti Player 2,GK,27,123.9,0.84,0
+2026-06-10,Haiti,Haiti Player 3,GK,33,121.6,0.806,0
+2026-06-10,Haiti,Haiti Player 4,DEF,23,114.2,0.902,0
+2026-06-10,Haiti,Haiti Player 5,DEF,30,125.2,0.947,0
+2026-06-10,Haiti,Haiti Player 6,DEF,26,119.7,0.932,0
+2026-06-10,Haiti,Haiti Player 7,DEF,26,128.2,0.988,0
+2026-06-10,Haiti,Haiti Player 8,DEF,27,111.0,0.926,0
+2026-06-10,Haiti,Haiti Player 9,DEF,23,119.1,0.909,0
+2026-06-10,Haiti,Haiti Player 10,DEF,25,112.0,0.9,0
+2026-06-10,Haiti,Haiti Player 11,DEF,30,109.9,0.9,0
+2026-06-10,Haiti,Haiti Player 12,MID,23,120.2,0.921,0
+2026-06-10,Haiti,Haiti Player 13,MID,20,117.3,0.899,0
+2026-06-10,Haiti,Haiti Player 14,MID,21,119.5,0.946,1
+2026-06-10,Haiti,Haiti Player 15,MID,25,111.4,0.956,0
+2026-06-10,Haiti,Haiti Player 16,MID,23,112.9,0.874,0
+2026-06-10,Haiti,Haiti Player 17,MID,30,100.9,0.834,0
+2026-06-10,Haiti,Haiti Player 18,MID,28,117.3,0.976,1
+2026-06-10,Haiti,Haiti Player 19,MID,23,114.9,0.874,0
+2026-06-10,Haiti,Haiti Player 20,ATT,21,106.2,0.895,0
+2026-06-10,Haiti,Haiti Player 21,ATT,33,111.4,0.934,0
+2026-06-10,Haiti,Haiti Player 22,ATT,32,104.3,0.95,0
+2026-06-10,Haiti,Haiti Player 23,ATT,26,112.2,0.866,0
+2026-06-10,Haiti,Haiti Player 24,ATT,27,111.4,0.911,0
+2026-06-10,Haiti,Haiti Player 25,ATT,33,94.4,0.925,0
+2026-06-10,Haiti,Haiti Player 26,ATT,28,115.2,0.806,0
+2026-06-10,Iran,Iran Player 1,GK,34,158.1,0.869,0
+2026-06-10,Iran,Iran Player 2,GK,26,148.7,0.922,1
+2026-06-10,Iran,Iran Player 3,GK,25,151.3,0.898,0
+2026-06-10,Iran,Iran Player 4,DEF,28,142.6,0.909,0
+2026-06-10,Iran,Iran Player 5,DEF,21,141.0,0.866,0
+2026-06-10,Iran,Iran Player 6,DEF,36,136.8,0.969,0
+2026-06-10,Iran,Iran Player 7,DEF,19,135.4,0.919,0
+2026-06-10,Iran,Iran Player 8,DEF,27,150.8,0.948,0
+2026-06-10,Iran,Iran Player 9,DEF,28,143.9,0.869,0
+2026-06-10,Iran,Iran Player 10,DEF,28,140.6,0.933,0
+2026-06-10,Iran,Iran Player 11,DEF,18,149.1,0.844,0
+2026-06-10,Iran,Iran Player 12,MID,27,138.5,0.928,0
+2026-06-10,Iran,Iran Player 13,MID,24,138.0,0.927,0
+2026-06-10,Iran,Iran Player 14,MID,28,132.6,0.896,1
+2026-06-10,Iran,Iran Player 15,MID,28,135.1,0.935,0
+2026-06-10,Iran,Iran Player 16,MID,25,143.9,0.867,0
+2026-06-10,Iran,Iran Player 17,MID,26,148.0,0.899,1
+2026-06-10,Iran,Iran Player 18,MID,30,137.0,0.922,0
+2026-06-10,Iran,Iran Player 19,MID,28,133.1,0.923,0
+2026-06-10,Iran,Iran Player 20,ATT,31,132.8,0.909,0
+2026-06-10,Iran,Iran Player 21,ATT,26,125.5,0.974,0
+2026-06-10,Iran,Iran Player 22,ATT,24,130.1,0.977,1
+2026-06-10,Iran,Iran Player 23,ATT,26,141.6,0.934,0
+2026-06-10,Iran,Iran Player 24,ATT,25,127.3,0.952,0
+2026-06-10,Iran,Iran Player 25,ATT,28,128.4,0.919,0
+2026-06-10,Iran,Iran Player 26,ATT,22,135.8,0.895,0
+2026-06-10,Iraq,Iraq Player 1,GK,31,135.4,0.895,0
+2026-06-10,Iraq,Iraq Player 2,GK,29,126.6,0.864,0
+2026-06-10,Iraq,Iraq Player 3,GK,29,120.6,0.871,0
+2026-06-10,Iraq,Iraq Player 4,DEF,29,122.2,0.894,0
+2026-06-10,Iraq,Iraq Player 5,DEF,27,125.6,0.923,0
+2026-06-10,Iraq,Iraq Player 6,DEF,23,121.5,0.963,0
+2026-06-10,Iraq,Iraq Player 7,DEF,30,125.7,0.891,0
+2026-06-10,Iraq,Iraq Player 8,DEF,30,133.5,0.918,0
+2026-06-10,Iraq,Iraq Player 9,DEF,21,124.4,0.977,0
+2026-06-10,Iraq,Iraq Player 10,DEF,28,129.8,0.951,0
+2026-06-10,Iraq,Iraq Player 11,DEF,24,110.6,0.872,0
+2026-06-10,Iraq,Iraq Player 12,MID,29,124.0,0.964,0
+2026-06-10,Iraq,Iraq Player 13,MID,20,125.6,0.99,0
+2026-06-10,Iraq,Iraq Player 14,MID,24,126.5,0.975,0
+2026-06-10,Iraq,Iraq Player 15,MID,25,126.4,0.929,0
+2026-06-10,Iraq,Iraq Player 16,MID,25,114.3,0.861,0
+2026-06-10,Iraq,Iraq Player 17,MID,22,118.1,0.881,0
+2026-06-10,Iraq,Iraq Player 18,MID,25,116.4,0.857,0
+2026-06-10,Iraq,Iraq Player 19,MID,25,112.3,0.935,0
+2026-06-10,Iraq,Iraq Player 20,ATT,32,117.4,0.927,0
+2026-06-10,Iraq,Iraq Player 21,ATT,24,122.4,0.9,0
+2026-06-10,Iraq,Iraq Player 22,ATT,22,113.9,0.911,0
+2026-06-10,Iraq,Iraq Player 23,ATT,25,112.9,0.926,0
+2026-06-10,Iraq,Iraq Player 24,ATT,30,128.2,0.949,0
+2026-06-10,Iraq,Iraq Player 25,ATT,23,109.3,0.852,0
+2026-06-10,Iraq,Iraq Player 26,ATT,21,115.8,0.89,0
+2026-06-10,Ivory Coast,Ivory Coast Player 1,GK,24,141.8,0.939,0
+2026-06-10,Ivory Coast,Ivory Coast Player 2,GK,25,138.3,0.991,0
+2026-06-10,Ivory Coast,Ivory Coast Player 3,GK,29,136.5,0.86,0
+2026-06-10,Ivory Coast,Ivory Coast Player 4,DEF,28,143.0,0.884,0
+2026-06-10,Ivory Coast,Ivory Coast Player 5,DEF,19,139.9,0.953,0
+2026-06-10,Ivory Coast,Ivory Coast Player 6,DEF,25,134.4,0.984,0
+2026-06-10,Ivory Coast,Ivory Coast Player 7,DEF,30,134.0,0.902,0
+2026-06-10,Ivory Coast,Ivory Coast Player 8,DEF,21,137.2,0.868,0
+2026-06-10,Ivory Coast,Ivory Coast Player 9,DEF,28,128.0,0.929,0
+2026-06-10,Ivory Coast,Ivory Coast Player 10,DEF,23,130.1,0.889,0
+2026-06-10,Ivory Coast,Ivory Coast Player 11,DEF,34,131.7,0.92,0
+2026-06-10,Ivory Coast,Ivory Coast Player 12,MID,25,133.6,0.844,0
+2026-06-10,Ivory Coast,Ivory Coast Player 13,MID,21,118.6,0.958,0
+2026-06-10,Ivory Coast,Ivory Coast Player 14,MID,32,138.2,0.917,0
+2026-06-10,Ivory Coast,Ivory Coast Player 15,MID,24,113.8,0.898,0
+2026-06-10,Ivory Coast,Ivory Coast Player 16,MID,24,121.8,0.916,0
+2026-06-10,Ivory Coast,Ivory Coast Player 17,MID,27,120.9,0.994,0
+2026-06-10,Ivory Coast,Ivory Coast Player 18,MID,26,121.3,0.88,0
+2026-06-10,Ivory Coast,Ivory Coast Player 19,MID,25,125.5,0.936,0
+2026-06-10,Ivory Coast,Ivory Coast Player 20,ATT,27,113.2,0.881,0
+2026-06-10,Ivory Coast,Ivory Coast Player 21,ATT,25,121.0,0.989,0
+2026-06-10,Ivory Coast,Ivory Coast Player 22,ATT,27,125.2,0.974,0
+2026-06-10,Ivory Coast,Ivory Coast Player 23,ATT,29,132.6,0.852,0
+2026-06-10,Ivory Coast,Ivory Coast Player 24,ATT,25,120.7,0.893,0
+2026-06-10,Ivory Coast,Ivory Coast Player 25,ATT,24,116.4,0.937,0
+2026-06-10,Ivory Coast,Ivory Coast Player 26,ATT,23,111.6,0.913,0
+2026-06-10,Japan,Japan Player 1,GK,27,154.6,0.914,0
+2026-06-10,Japan,Japan Player 2,GK,27,163.1,0.853,0
+2026-06-10,Japan,Japan Player 3,GK,19,151.6,0.875,0
+2026-06-10,Japan,Japan Player 4,DEF,25,163.0,0.878,0
+2026-06-10,Japan,Japan Player 5,DEF,24,151.3,0.892,0
+2026-06-10,Japan,Japan Player 6,DEF,27,153.0,0.957,0
+2026-06-10,Japan,Japan Player 7,DEF,21,162.4,0.938,0
+2026-06-10,Japan,Japan Player 8,DEF,26,156.1,0.94,0
+2026-06-10,Japan,Japan Player 9,DEF,24,147.8,0.908,0
+2026-06-10,Japan,Japan Player 10,DEF,32,144.0,0.939,0
+2026-06-10,Japan,Japan Player 11,DEF,26,153.2,0.993,0
+2026-06-10,Japan,Japan Player 12,MID,25,145.4,0.939,1
+2026-06-10,Japan,Japan Player 13,MID,30,156.9,0.929,0
+2026-06-10,Japan,Japan Player 14,MID,32,155.5,0.884,0
+2026-06-10,Japan,Japan Player 15,MID,22,136.4,0.935,0
+2026-06-10,Japan,Japan Player 16,MID,29,141.2,0.958,0
+2026-06-10,Japan,Japan Player 17,MID,27,148.0,0.868,0
+2026-06-10,Japan,Japan Player 18,MID,24,147.0,0.866,0
+2026-06-10,Japan,Japan Player 19,MID,28,144.2,0.929,0
+2026-06-10,Japan,Japan Player 20,ATT,27,135.1,0.96,0
+2026-06-10,Japan,Japan Player 21,ATT,28,137.4,0.858,0
+2026-06-10,Japan,Japan Player 22,ATT,21,139.1,0.913,0
+2026-06-10,Japan,Japan Player 23,ATT,27,140.2,0.861,0
+2026-06-10,Japan,Japan Player 24,ATT,26,142.7,0.927,0
+2026-06-10,Japan,Japan Player 25,ATT,29,131.0,0.921,0
+2026-06-10,Japan,Japan Player 26,ATT,25,146.9,0.896,1
+2026-06-10,Jordan,Jordan Player 1,GK,25,132.9,0.83,0
+2026-06-10,Jordan,Jordan Player 2,GK,30,130.6,0.943,0
+2026-06-10,Jordan,Jordan Player 3,GK,24,141.8,0.948,0
+2026-06-10,Jordan,Jordan Player 4,DEF,35,133.0,0.919,0
+2026-06-10,Jordan,Jordan Player 5,DEF,32,137.9,0.884,0
+2026-06-10,Jordan,Jordan Player 6,DEF,28,134.5,0.939,0
+2026-06-10,Jordan,Jordan Player 7,DEF,26,134.4,0.946,1
+2026-06-10,Jordan,Jordan Player 8,DEF,22,131.3,0.904,0
+2026-06-10,Jordan,Jordan Player 9,DEF,29,131.6,0.976,0
+2026-06-10,Jordan,Jordan Player 10,DEF,27,119.6,0.976,0
+2026-06-10,Jordan,Jordan Player 11,DEF,30,126.0,0.918,1
+2026-06-10,Jordan,Jordan Player 12,MID,24,122.0,1.0,0
+2026-06-10,Jordan,Jordan Player 13,MID,24,117.3,0.873,0
+2026-06-10,Jordan,Jordan Player 14,MID,23,118.5,0.911,1
+2026-06-10,Jordan,Jordan Player 15,MID,31,119.3,0.892,1
+2026-06-10,Jordan,Jordan Player 16,MID,25,128.4,0.901,0
+2026-06-10,Jordan,Jordan Player 17,MID,24,113.2,0.898,0
+2026-06-10,Jordan,Jordan Player 18,MID,27,121.1,0.868,0
+2026-06-10,Jordan,Jordan Player 19,MID,25,122.4,1.0,0
+2026-06-10,Jordan,Jordan Player 20,ATT,30,113.2,0.878,0
+2026-06-10,Jordan,Jordan Player 21,ATT,24,125.6,0.918,0
+2026-06-10,Jordan,Jordan Player 22,ATT,25,124.9,0.897,0
+2026-06-10,Jordan,Jordan Player 23,ATT,32,116.3,0.865,0
+2026-06-10,Jordan,Jordan Player 24,ATT,23,113.5,0.906,0
+2026-06-10,Jordan,Jordan Player 25,ATT,29,120.0,0.908,0
+2026-06-10,Jordan,Jordan Player 26,ATT,29,125.3,0.869,0
+2026-06-10,Mexico,Mexico Player 1,GK,24,156.6,0.935,0
+2026-06-10,Mexico,Mexico Player 2,GK,31,152.5,0.981,0
+2026-06-10,Mexico,Mexico Player 3,GK,22,143.2,0.948,0
+2026-06-10,Mexico,Mexico Player 4,DEF,24,159.2,0.989,0
+2026-06-10,Mexico,Mexico Player 5,DEF,31,156.2,0.919,0
+2026-06-10,Mexico,Mexico Player 6,DEF,22,152.5,0.925,0
+2026-06-10,Mexico,Mexico Player 7,DEF,23,143.4,0.934,0
+2026-06-10,Mexico,Mexico Player 8,DEF,29,154.2,0.898,0
+2026-06-10,Mexico,Mexico Player 9,DEF,23,153.1,0.904,0
+2026-06-10,Mexico,Mexico Player 10,DEF,24,152.2,0.963,1
+2026-06-10,Mexico,Mexico Player 11,DEF,16,152.5,0.835,0
+2026-06-10,Mexico,Mexico Player 12,MID,27,148.2,0.96,1
+2026-06-10,Mexico,Mexico Player 13,MID,26,144.2,0.925,0
+2026-06-10,Mexico,Mexico Player 14,MID,27,125.7,0.916,0
+2026-06-10,Mexico,Mexico Player 15,MID,36,149.7,0.957,0
+2026-06-10,Mexico,Mexico Player 16,MID,29,138.7,0.951,0
+2026-06-10,Mexico,Mexico Player 17,MID,27,148.0,0.962,0
+2026-06-10,Mexico,Mexico Player 18,MID,30,135.8,0.953,0
+2026-06-10,Mexico,Mexico Player 19,MID,22,148.7,0.93,1
+2026-06-10,Mexico,Mexico Player 20,ATT,29,134.6,0.932,0
+2026-06-10,Mexico,Mexico Player 21,ATT,31,145.4,0.883,0
+2026-06-10,Mexico,Mexico Player 22,ATT,26,139.7,0.965,0
+2026-06-10,Mexico,Mexico Player 23,ATT,28,141.3,0.881,0
+2026-06-10,Mexico,Mexico Player 24,ATT,24,138.0,0.816,0
+2026-06-10,Mexico,Mexico Player 25,ATT,26,135.1,0.979,0
+2026-06-10,Mexico,Mexico Player 26,ATT,30,142.5,0.84,0
+2026-06-10,Morocco,Morocco Player 1,GK,22,162.0,0.967,0
+2026-06-10,Morocco,Morocco Player 2,GK,23,161.8,1.0,0
+2026-06-10,Morocco,Morocco Player 3,GK,21,149.4,0.877,0
+2026-06-10,Morocco,Morocco Player 4,DEF,23,168.9,0.939,0
+2026-06-10,Morocco,Morocco Player 5,DEF,29,148.1,0.863,0
+2026-06-10,Morocco,Morocco Player 6,DEF,31,156.3,0.921,0
+2026-06-10,Morocco,Morocco Player 7,DEF,27,144.6,0.923,0
+2026-06-10,Morocco,Morocco Player 8,DEF,20,135.5,0.91,0
+2026-06-10,Morocco,Morocco Player 9,DEF,18,140.6,0.928,0
+2026-06-10,Morocco,Morocco Player 10,DEF,27,160.9,0.942,0
+2026-06-10,Morocco,Morocco Player 11,DEF,27,156.3,0.985,0
+2026-06-10,Morocco,Morocco Player 12,MID,26,141.4,0.923,0
+2026-06-10,Morocco,Morocco Player 13,MID,32,148.8,0.936,0
+2026-06-10,Morocco,Morocco Player 14,MID,27,151.4,0.958,0
+2026-06-10,Morocco,Morocco Player 15,MID,23,161.8,0.896,0
+2026-06-10,Morocco,Morocco Player 16,MID,26,146.6,0.932,0
+2026-06-10,Morocco,Morocco Player 17,MID,28,155.5,0.906,0
+2026-06-10,Morocco,Morocco Player 18,MID,32,137.8,0.87,0
+2026-06-10,Morocco,Morocco Player 19,MID,26,148.8,0.852,0
+2026-06-10,Morocco,Morocco Player 20,ATT,22,132.5,0.866,0
+2026-06-10,Morocco,Morocco Player 21,ATT,27,142.6,0.946,0
+2026-06-10,Morocco,Morocco Player 22,ATT,28,152.7,0.948,0
+2026-06-10,Morocco,Morocco Player 23,ATT,29,146.1,0.941,0
+2026-06-10,Morocco,Morocco Player 24,ATT,23,139.5,0.948,0
+2026-06-10,Morocco,Morocco Player 25,ATT,20,140.5,0.973,0
+2026-06-10,Morocco,Morocco Player 26,ATT,36,133.2,0.869,0
+2026-06-10,Netherlands,Netherlands Player 1,GK,27,161.6,0.938,0
+2026-06-10,Netherlands,Netherlands Player 2,GK,35,155.8,0.907,0
+2026-06-10,Netherlands,Netherlands Player 3,GK,29,151.5,0.925,0
+2026-06-10,Netherlands,Netherlands Player 4,DEF,31,157.4,0.9,0
+2026-06-10,Netherlands,Netherlands Player 5,DEF,30,154.8,0.922,0
+2026-06-10,Netherlands,Netherlands Player 6,DEF,31,163.3,0.861,0
+2026-06-10,Netherlands,Netherlands Player 7,DEF,28,158.9,0.931,0
+2026-06-10,Netherlands,Netherlands Player 8,DEF,32,154.1,0.927,0
+2026-06-10,Netherlands,Netherlands Player 9,DEF,30,147.5,0.866,0
+2026-06-10,Netherlands,Netherlands Player 10,DEF,26,149.2,0.892,0
+2026-06-10,Netherlands,Netherlands Player 11,DEF,26,142.7,0.871,0
+2026-06-10,Netherlands,Netherlands Player 12,MID,28,151.5,0.948,0
+2026-06-10,Netherlands,Netherlands Player 13,MID,26,147.8,0.906,0
+2026-06-10,Netherlands,Netherlands Player 14,MID,27,156.9,0.949,1
+2026-06-10,Netherlands,Netherlands Player 15,MID,28,150.2,0.923,0
+2026-06-10,Netherlands,Netherlands Player 16,MID,22,142.2,0.957,0
+2026-06-10,Netherlands,Netherlands Player 17,MID,29,140.2,0.908,0
+2026-06-10,Netherlands,Netherlands Player 18,MID,29,158.4,0.869,0
+2026-06-10,Netherlands,Netherlands Player 19,MID,23,149.9,0.987,0
+2026-06-10,Netherlands,Netherlands Player 20,ATT,30,144.2,0.89,0
+2026-06-10,Netherlands,Netherlands Player 21,ATT,31,146.7,0.917,0
+2026-06-10,Netherlands,Netherlands Player 22,ATT,24,147.3,1.0,0
+2026-06-10,Netherlands,Netherlands Player 23,ATT,23,144.9,0.942,0
+2026-06-10,Netherlands,Netherlands Player 24,ATT,22,143.6,0.886,0
+2026-06-10,Netherlands,Netherlands Player 25,ATT,29,139.8,0.871,1
+2026-06-10,Netherlands,Netherlands Player 26,ATT,26,145.7,0.842,0
+2026-06-10,New Zealand,New Zealand Player 1,GK,28,138.9,0.86,0
+2026-06-10,New Zealand,New Zealand Player 2,GK,25,126.5,0.895,0
+2026-06-10,New Zealand,New Zealand Player 3,GK,24,129.1,0.923,0
+2026-06-10,New Zealand,New Zealand Player 4,DEF,24,129.3,0.969,0
+2026-06-10,New Zealand,New Zealand Player 5,DEF,26,128.6,0.863,0
+2026-06-10,New Zealand,New Zealand Player 6,DEF,20,124.7,0.867,0
+2026-06-10,New Zealand,New Zealand Player 7,DEF,27,127.5,0.971,0
+2026-06-10,New Zealand,New Zealand Player 8,DEF,25,129.3,0.852,0
+2026-06-10,New Zealand,New Zealand Player 9,DEF,19,128.6,0.942,0
+2026-06-10,New Zealand,New Zealand Player 10,DEF,25,114.8,0.924,0
+2026-06-10,New Zealand,New Zealand Player 11,DEF,25,125.6,0.947,0
+2026-06-10,New Zealand,New Zealand Player 12,MID,29,125.0,0.922,1
+2026-06-10,New Zealand,New Zealand Player 13,MID,28,117.0,0.894,0
+2026-06-10,New Zealand,New Zealand Player 14,MID,30,121.7,0.904,0
+2026-06-10,New Zealand,New Zealand Player 15,MID,22,126.7,0.976,0
+2026-06-10,New Zealand,New Zealand Player 16,MID,30,114.9,0.914,0
+2026-06-10,New Zealand,New Zealand Player 17,MID,28,126.2,0.821,0
+2026-06-10,New Zealand,New Zealand Player 18,MID,27,119.0,0.946,0
+2026-06-10,New Zealand,New Zealand Player 19,MID,30,118.4,0.911,0
+2026-06-10,New Zealand,New Zealand Player 20,ATT,25,116.3,0.942,0
+2026-06-10,New Zealand,New Zealand Player 21,ATT,25,112.1,0.918,0
+2026-06-10,New Zealand,New Zealand Player 22,ATT,20,116.9,0.966,0
+2026-06-10,New Zealand,New Zealand Player 23,ATT,27,109.2,0.927,0
+2026-06-10,New Zealand,New Zealand Player 24,ATT,30,109.2,0.945,0
+2026-06-10,New Zealand,New Zealand Player 25,ATT,25,112.4,0.854,0
+2026-06-10,New Zealand,New Zealand Player 26,ATT,29,106.8,0.865,0
+2026-06-10,Norway,Norway Player 1,GK,27,137.7,0.887,0
+2026-06-10,Norway,Norway Player 2,GK,29,158.8,0.945,0
+2026-06-10,Norway,Norway Player 3,GK,29,159.8,0.886,1
+2026-06-10,Norway,Norway Player 4,DEF,28,149.4,0.923,0
+2026-06-10,Norway,Norway Player 5,DEF,27,150.3,0.929,0
+2026-06-10,Norway,Norway Player 6,DEF,23,157.3,0.922,0
+2026-06-10,Norway,Norway Player 7,DEF,19,155.3,0.872,0
+2026-06-10,Norway,Norway Player 8,DEF,25,146.8,0.884,0
+2026-06-10,Norway,Norway Player 9,DEF,29,162.4,0.889,0
+2026-06-10,Norway,Norway Player 10,DEF,33,139.6,0.93,0
+2026-06-10,Norway,Norway Player 11,DEF,26,138.0,0.892,0
+2026-06-10,Norway,Norway Player 12,MID,27,154.8,0.895,0
+2026-06-10,Norway,Norway Player 13,MID,29,148.8,0.913,0
+2026-06-10,Norway,Norway Player 14,MID,30,146.1,0.849,0
+2026-06-10,Norway,Norway Player 15,MID,23,133.2,0.953,0
+2026-06-10,Norway,Norway Player 16,MID,24,140.7,1.0,0
+2026-06-10,Norway,Norway Player 17,MID,26,143.7,0.972,0
+2026-06-10,Norway,Norway Player 18,MID,30,135.2,0.955,0
+2026-06-10,Norway,Norway Player 19,MID,24,143.5,1.0,0
+2026-06-10,Norway,Norway Player 20,ATT,30,137.9,0.859,0
+2026-06-10,Norway,Norway Player 21,ATT,23,137.3,0.999,0
+2026-06-10,Norway,Norway Player 22,ATT,28,140.9,0.934,0
+2026-06-10,Norway,Norway Player 23,ATT,27,131.4,0.983,0
+2026-06-10,Norway,Norway Player 24,ATT,31,134.5,0.956,0
+2026-06-10,Norway,Norway Player 25,ATT,23,145.0,1.0,0
+2026-06-10,Norway,Norway Player 26,ATT,22,129.7,0.832,1
+2026-06-10,Panama,Panama Player 1,GK,23,135.1,0.895,1
+2026-06-10,Panama,Panama Player 2,GK,28,150.8,0.895,0
+2026-06-10,Panama,Panama Player 3,GK,24,139.9,0.909,0
+2026-06-10,Panama,Panama Player 4,DEF,29,137.4,0.915,0
+2026-06-10,Panama,Panama Player 5,DEF,31,149.8,0.999,0
+2026-06-10,Panama,Panama Player 6,DEF,26,133.1,0.879,0
+2026-06-10,Panama,Panama Player 7,DEF,22,142.5,0.931,0
+2026-06-10,Panama,Panama Player 8,DEF,26,142.2,0.968,0
+2026-06-10,Panama,Panama Player 9,DEF,29,138.3,0.904,0
+2026-06-10,Panama,Panama Player 10,DEF,27,132.2,0.932,0
+2026-06-10,Panama,Panama Player 11,DEF,28,134.9,0.922,0
+2026-06-10,Panama,Panama Player 12,MID,35,138.4,0.94,0
+2026-06-10,Panama,Panama Player 13,MID,30,136.1,0.949,0
+2026-06-10,Panama,Panama Player 14,MID,28,124.4,0.862,0
+2026-06-10,Panama,Panama Player 15,MID,26,134.9,0.919,0
+2026-06-10,Panama,Panama Player 16,MID,24,133.7,0.832,0
+2026-06-10,Panama,Panama Player 17,MID,22,130.1,0.926,1
+2026-06-10,Panama,Panama Player 18,MID,27,118.7,0.879,0
+2026-06-10,Panama,Panama Player 19,MID,28,129.9,0.854,0
+2026-06-10,Panama,Panama Player 20,ATT,26,137.2,0.949,0
+2026-06-10,Panama,Panama Player 21,ATT,28,123.9,0.911,0
+2026-06-10,Panama,Panama Player 22,ATT,25,114.5,0.921,0
+2026-06-10,Panama,Panama Player 23,ATT,28,129.2,1.0,0
+2026-06-10,Panama,Panama Player 24,ATT,33,128.5,0.92,0
+2026-06-10,Panama,Panama Player 25,ATT,27,127.0,0.919,0
+2026-06-10,Panama,Panama Player 26,ATT,24,117.8,0.946,0
+2026-06-10,Paraguay,Paraguay Player 1,GK,31,164.7,0.924,0
+2026-06-10,Paraguay,Paraguay Player 2,GK,22,163.3,0.946,0
+2026-06-10,Paraguay,Paraguay Player 3,GK,28,138.7,0.94,0
+2026-06-10,Paraguay,Paraguay Player 4,DEF,30,142.4,0.799,0
+2026-06-10,Paraguay,Paraguay Player 5,DEF,25,151.0,0.886,0
+2026-06-10,Paraguay,Paraguay Player 6,DEF,25,141.4,0.943,0
+2026-06-10,Paraguay,Paraguay Player 7,DEF,25,140.9,0.908,0
+2026-06-10,Paraguay,Paraguay Player 8,DEF,26,140.2,0.925,0
+2026-06-10,Paraguay,Paraguay Player 9,DEF,27,145.9,0.946,0
+2026-06-10,Paraguay,Paraguay Player 10,DEF,27,134.3,0.916,0
+2026-06-10,Paraguay,Paraguay Player 11,DEF,29,149.5,0.905,0
+2026-06-10,Paraguay,Paraguay Player 12,MID,28,139.6,0.976,0
+2026-06-10,Paraguay,Paraguay Player 13,MID,24,135.0,0.962,0
+2026-06-10,Paraguay,Paraguay Player 14,MID,24,145.8,0.934,0
+2026-06-10,Paraguay,Paraguay Player 15,MID,24,139.9,0.878,1
+2026-06-10,Paraguay,Paraguay Player 16,MID,27,137.3,0.928,0
+2026-06-10,Paraguay,Paraguay Player 17,MID,20,130.7,0.949,0
+2026-06-10,Paraguay,Paraguay Player 18,MID,29,146.3,0.982,0
+2026-06-10,Paraguay,Paraguay Player 19,MID,27,142.4,0.896,0
+2026-06-10,Paraguay,Paraguay Player 20,ATT,26,131.8,0.891,0
+2026-06-10,Paraguay,Paraguay Player 21,ATT,21,122.2,0.96,0
+2026-06-10,Paraguay,Paraguay Player 22,ATT,29,132.3,0.939,0
+2026-06-10,Paraguay,Paraguay Player 23,ATT,25,125.5,0.991,0
+2026-06-10,Paraguay,Paraguay Player 24,ATT,32,124.2,0.884,0
+2026-06-10,Paraguay,Paraguay Player 25,ATT,29,133.0,0.883,0
+2026-06-10,Paraguay,Paraguay Player 26,ATT,24,131.6,0.892,0
+2026-06-10,Portugal,Portugal Player 1,GK,26,157.5,0.866,0
+2026-06-10,Portugal,Portugal Player 2,GK,31,164.1,0.892,0
+2026-06-10,Portugal,Portugal Player 3,GK,25,159.9,0.948,0
+2026-06-10,Portugal,Portugal Player 4,DEF,29,161.9,0.88,0
+2026-06-10,Portugal,Portugal Player 5,DEF,23,159.1,0.937,0
+2026-06-10,Portugal,Portugal Player 6,DEF,22,159.0,0.915,0
+2026-06-10,Portugal,Portugal Player 7,DEF,24,166.7,0.946,0
+2026-06-10,Portugal,Portugal Player 8,DEF,24,156.3,0.915,0
+2026-06-10,Portugal,Portugal Player 9,DEF,20,153.5,0.911,0
+2026-06-10,Portugal,Portugal Player 10,DEF,27,148.1,0.951,0
+2026-06-10,Portugal,Portugal Player 11,DEF,30,150.9,0.898,0
+2026-06-10,Portugal,Portugal Player 12,MID,29,154.5,0.869,0
+2026-06-10,Portugal,Portugal Player 13,MID,24,143.5,0.853,0
+2026-06-10,Portugal,Portugal Player 14,MID,32,148.1,0.909,0
+2026-06-10,Portugal,Portugal Player 15,MID,22,151.3,0.942,0
+2026-06-10,Portugal,Portugal Player 16,MID,27,147.2,0.961,0
+2026-06-10,Portugal,Portugal Player 17,MID,25,157.4,0.927,0
+2026-06-10,Portugal,Portugal Player 18,MID,29,155.1,0.946,0
+2026-06-10,Portugal,Portugal Player 19,MID,30,141.4,0.855,0
+2026-06-10,Portugal,Portugal Player 20,ATT,30,153.9,0.937,0
+2026-06-10,Portugal,Portugal Player 21,ATT,26,148.9,0.96,0
+2026-06-10,Portugal,Portugal Player 22,ATT,29,151.8,0.968,0
+2026-06-10,Portugal,Portugal Player 23,ATT,29,154.5,0.885,0
+2026-06-10,Portugal,Portugal Player 24,ATT,27,134.0,0.925,0
+2026-06-10,Portugal,Portugal Player 25,ATT,22,142.7,0.833,0
+2026-06-10,Portugal,Portugal Player 26,ATT,26,141.7,0.958,0
+2026-06-10,Qatar,Qatar Player 1,GK,29,119.8,0.903,0
+2026-06-10,Qatar,Qatar Player 2,GK,28,114.1,0.945,1
+2026-06-10,Qatar,Qatar Player 3,GK,19,110.1,0.951,0
+2026-06-10,Qatar,Qatar Player 4,DEF,25,109.2,0.848,0
+2026-06-10,Qatar,Qatar Player 5,DEF,25,107.5,0.884,0
+2026-06-10,Qatar,Qatar Player 6,DEF,28,108.7,0.974,0
+2026-06-10,Qatar,Qatar Player 7,DEF,28,118.0,0.872,0
+2026-06-10,Qatar,Qatar Player 8,DEF,29,114.3,0.903,0
+2026-06-10,Qatar,Qatar Player 9,DEF,20,111.6,0.917,0
+2026-06-10,Qatar,Qatar Player 10,DEF,27,107.5,0.9,0
+2026-06-10,Qatar,Qatar Player 11,DEF,22,100.3,0.868,0
+2026-06-10,Qatar,Qatar Player 12,MID,29,101.6,0.926,0
+2026-06-10,Qatar,Qatar Player 13,MID,33,110.5,0.9,0
+2026-06-10,Qatar,Qatar Player 14,MID,18,101.1,0.925,0
+2026-06-10,Qatar,Qatar Player 15,MID,33,96.2,0.896,0
+2026-06-10,Qatar,Qatar Player 16,MID,31,99.4,0.848,0
+2026-06-10,Qatar,Qatar Player 17,MID,32,114.0,0.91,0
+2026-06-10,Qatar,Qatar Player 18,MID,25,100.1,0.899,0
+2026-06-10,Qatar,Qatar Player 19,MID,24,88.5,0.875,0
+2026-06-10,Qatar,Qatar Player 20,ATT,27,96.4,0.927,0
+2026-06-10,Qatar,Qatar Player 21,ATT,25,103.0,0.883,0
+2026-06-10,Qatar,Qatar Player 22,ATT,30,98.5,0.805,0
+2026-06-10,Qatar,Qatar Player 23,ATT,28,106.1,0.947,1
+2026-06-10,Qatar,Qatar Player 24,ATT,30,102.6,0.965,1
+2026-06-10,Qatar,Qatar Player 25,ATT,26,86.8,0.962,0
+2026-06-10,Qatar,Qatar Player 26,ATT,23,105.7,0.877,0
+2026-06-10,Saudi Arabia,Saudi Arabia Player 1,GK,30,130.8,0.88,0
+2026-06-10,Saudi Arabia,Saudi Arabia Player 2,GK,25,123.0,0.942,0
+2026-06-10,Saudi Arabia,Saudi Arabia Player 3,GK,27,120.4,0.922,0
+2026-06-10,Saudi Arabia,Saudi Arabia Player 4,DEF,29,122.9,0.915,0
+2026-06-10,Saudi Arabia,Saudi Arabia Player 5,DEF,26,126.7,0.89,0
+2026-06-10,Saudi Arabia,Saudi Arabia Player 6,DEF,30,112.1,0.9,0
+2026-06-10,Saudi Arabia,Saudi Arabia Player 7,DEF,26,125.0,0.964,0
+2026-06-10,Saudi Arabia,Saudi Arabia Player 8,DEF,28,123.8,0.958,0
+2026-06-10,Saudi Arabia,Saudi Arabia Player 9,DEF,32,127.2,0.895,0
+2026-06-10,Saudi Arabia,Saudi Arabia Player 10,DEF,30,120.7,0.809,1
+2026-06-10,Saudi Arabia,Saudi Arabia Player 11,DEF,28,120.9,0.932,0
+2026-06-10,Saudi Arabia,Saudi Arabia Player 12,MID,26,116.2,0.886,0
+2026-06-10,Saudi Arabia,Saudi Arabia Player 13,MID,28,124.1,0.931,0
+2026-06-10,Saudi Arabia,Saudi Arabia Player 14,MID,28,123.2,0.959,1
+2026-06-10,Saudi Arabia,Saudi Arabia Player 15,MID,27,114.4,1.0,0
+2026-06-10,Saudi Arabia,Saudi Arabia Player 16,MID,31,109.4,0.935,0
+2026-06-10,Saudi Arabia,Saudi Arabia Player 17,MID,22,114.0,0.844,0
+2026-06-10,Saudi Arabia,Saudi Arabia Player 18,MID,27,110.7,0.956,0
+2026-06-10,Saudi Arabia,Saudi Arabia Player 19,MID,29,110.2,0.967,0
+2026-06-10,Saudi Arabia,Saudi Arabia Player 20,ATT,27,106.2,0.928,0
+2026-06-10,Saudi Arabia,Saudi Arabia Player 21,ATT,22,122.2,0.913,0
+2026-06-10,Saudi Arabia,Saudi Arabia Player 22,ATT,30,104.9,0.878,0
+2026-06-10,Saudi Arabia,Saudi Arabia Player 23,ATT,30,104.0,1.0,0
+2026-06-10,Saudi Arabia,Saudi Arabia Player 24,ATT,28,112.0,0.896,0
+2026-06-10,Saudi Arabia,Saudi Arabia Player 25,ATT,25,107.8,0.912,0
+2026-06-10,Saudi Arabia,Saudi Arabia Player 26,ATT,27,107.7,0.915,0
+2026-06-10,Scotland,Scotland Player 1,GK,31,145.2,0.897,0
+2026-06-10,Scotland,Scotland Player 2,GK,26,147.6,0.961,0
+2026-06-10,Scotland,Scotland Player 3,GK,24,143.5,0.891,0
+2026-06-10,Scotland,Scotland Player 4,DEF,32,136.0,0.926,0
+2026-06-10,Scotland,Scotland Player 5,DEF,30,140.4,0.865,0
+2026-06-10,Scotland,Scotland Player 6,DEF,29,137.8,0.902,0
+2026-06-10,Scotland,Scotland Player 7,DEF,27,134.6,0.948,0
+2026-06-10,Scotland,Scotland Player 8,DEF,23,129.0,0.898,0
+2026-06-10,Scotland,Scotland Player 9,DEF,29,124.2,0.974,1
+2026-06-10,Scotland,Scotland Player 10,DEF,25,123.2,0.879,0
+2026-06-10,Scotland,Scotland Player 11,DEF,27,134.6,0.907,0
+2026-06-10,Scotland,Scotland Player 12,MID,25,138.5,0.954,0
+2026-06-10,Scotland,Scotland Player 13,MID,26,134.8,0.982,0
+2026-06-10,Scotland,Scotland Player 14,MID,31,123.5,0.843,0
+2026-06-10,Scotland,Scotland Player 15,MID,26,109.5,0.951,0
+2026-06-10,Scotland,Scotland Player 16,MID,28,131.0,0.86,0
+2026-06-10,Scotland,Scotland Player 17,MID,35,145.0,0.923,0
+2026-06-10,Scotland,Scotland Player 18,MID,29,121.7,0.9,0
+2026-06-10,Scotland,Scotland Player 19,MID,28,124.6,0.918,1
+2026-06-10,Scotland,Scotland Player 20,ATT,25,133.8,0.896,0
+2026-06-10,Scotland,Scotland Player 21,ATT,25,119.1,0.948,0
+2026-06-10,Scotland,Scotland Player 22,ATT,23,126.9,0.841,0
+2026-06-10,Scotland,Scotland Player 23,ATT,31,124.9,0.972,0
+2026-06-10,Scotland,Scotland Player 24,ATT,29,130.9,1.0,1
+2026-06-10,Scotland,Scotland Player 25,ATT,35,130.0,0.988,1
+2026-06-10,Scotland,Scotland Player 26,ATT,28,136.2,0.899,0
+2026-06-10,Senegal,Senegal Player 1,GK,30,145.7,0.915,0
+2026-06-10,Senegal,Senegal Player 2,GK,26,140.6,0.919,0
+2026-06-10,Senegal,Senegal Player 3,GK,21,153.8,0.958,0
+2026-06-10,Senegal,Senegal Player 4,DEF,25,142.3,1.0,0
+2026-06-10,Senegal,Senegal Player 5,DEF,22,147.3,0.868,0
+2026-06-10,Senegal,Senegal Player 6,DEF,31,145.4,0.926,0
+2026-06-10,Senegal,Senegal Player 7,DEF,34,146.8,0.876,0
+2026-06-10,Senegal,Senegal Player 8,DEF,28,143.0,0.948,0
+2026-06-10,Senegal,Senegal Player 9,DEF,33,146.2,0.855,0
+2026-06-10,Senegal,Senegal Player 10,DEF,29,145.0,0.985,0
+2026-06-10,Senegal,Senegal Player 11,DEF,21,146.8,0.904,0
+2026-06-10,Senegal,Senegal Player 12,MID,30,134.7,0.866,0
+2026-06-10,Senegal,Senegal Player 13,MID,29,138.9,0.89,0
+2026-06-10,Senegal,Senegal Player 14,MID,29,132.4,0.947,0
+2026-06-10,Senegal,Senegal Player 15,MID,28,133.8,0.934,0
+2026-06-10,Senegal,Senegal Player 16,MID,24,140.6,0.981,0
+2026-06-10,Senegal,Senegal Player 17,MID,24,132.7,0.924,0
+2026-06-10,Senegal,Senegal Player 18,MID,30,148.2,0.899,0
+2026-06-10,Senegal,Senegal Player 19,MID,24,133.7,0.897,0
+2026-06-10,Senegal,Senegal Player 20,ATT,30,129.1,0.969,0
+2026-06-10,Senegal,Senegal Player 21,ATT,21,131.9,0.925,0
+2026-06-10,Senegal,Senegal Player 22,ATT,21,130.6,0.892,0
+2026-06-10,Senegal,Senegal Player 23,ATT,26,136.4,0.946,0
+2026-06-10,Senegal,Senegal Player 24,ATT,25,131.9,0.942,0
+2026-06-10,Senegal,Senegal Player 25,ATT,23,130.3,0.88,0
+2026-06-10,Senegal,Senegal Player 26,ATT,21,122.1,0.921,0
+2026-06-10,South Africa,South Africa Player 1,GK,18,119.9,0.964,0
+2026-06-10,South Africa,South Africa Player 2,GK,28,106.6,0.899,0
+2026-06-10,South Africa,South Africa Player 3,GK,26,127.6,0.94,0
+2026-06-10,South Africa,South Africa Player 4,DEF,30,131.0,0.951,0
+2026-06-10,South Africa,South Africa Player 5,DEF,22,122.0,0.931,0
+2026-06-10,South Africa,South Africa Player 6,DEF,25,116.3,0.969,0
+2026-06-10,South Africa,South Africa Player 7,DEF,27,119.2,0.942,0
+2026-06-10,South Africa,South Africa Player 8,DEF,23,120.2,0.998,0
+2026-06-10,South Africa,South Africa Player 9,DEF,30,108.2,0.993,0
+2026-06-10,South Africa,South Africa Player 10,DEF,26,121.4,0.99,0
+2026-06-10,South Africa,South Africa Player 11,DEF,23,121.3,0.91,0
+2026-06-10,South Africa,South Africa Player 12,MID,25,106.2,0.901,0
+2026-06-10,South Africa,South Africa Player 13,MID,23,124.6,0.838,0
+2026-06-10,South Africa,South Africa Player 14,MID,27,115.0,0.952,0
+2026-06-10,South Africa,South Africa Player 15,MID,32,110.2,0.944,0
+2026-06-10,South Africa,South Africa Player 16,MID,31,111.1,0.908,0
+2026-06-10,South Africa,South Africa Player 17,MID,23,109.2,0.856,0
+2026-06-10,South Africa,South Africa Player 18,MID,26,114.6,0.903,0
+2026-06-10,South Africa,South Africa Player 19,MID,26,106.3,0.883,0
+2026-06-10,South Africa,South Africa Player 20,ATT,26,126.5,0.905,0
+2026-06-10,South Africa,South Africa Player 21,ATT,26,103.3,0.95,0
+2026-06-10,South Africa,South Africa Player 22,ATT,27,112.4,0.916,0
+2026-06-10,South Africa,South Africa Player 23,ATT,24,112.4,0.988,0
+2026-06-10,South Africa,South Africa Player 24,ATT,23,106.8,0.991,0
+2026-06-10,South Africa,South Africa Player 25,ATT,32,100.1,0.915,0
+2026-06-10,South Africa,South Africa Player 26,ATT,28,101.8,0.992,0
+2026-06-10,South Korea,South Korea Player 1,GK,24,147.8,0.973,1
+2026-06-10,South Korea,South Korea Player 2,GK,31,140.7,0.93,0
+2026-06-10,South Korea,South Korea Player 3,GK,28,144.0,0.844,0
+2026-06-10,South Korea,South Korea Player 4,DEF,30,148.1,0.917,0
+2026-06-10,South Korea,South Korea Player 5,DEF,23,146.0,0.988,0
+2026-06-10,South Korea,South Korea Player 6,DEF,34,135.2,0.905,0
+2026-06-10,South Korea,South Korea Player 7,DEF,29,134.7,0.933,0
+2026-06-10,South Korea,South Korea Player 8,DEF,26,131.4,0.947,0
+2026-06-10,South Korea,South Korea Player 9,DEF,28,132.7,0.889,0
+2026-06-10,South Korea,South Korea Player 10,DEF,28,131.9,0.824,0
+2026-06-10,South Korea,South Korea Player 11,DEF,27,129.5,0.992,0
+2026-06-10,South Korea,South Korea Player 12,MID,21,143.1,0.866,0
+2026-06-10,South Korea,South Korea Player 13,MID,32,147.6,0.87,0
+2026-06-10,South Korea,South Korea Player 14,MID,22,130.3,1.0,0
+2026-06-10,South Korea,South Korea Player 15,MID,26,134.2,0.887,0
+2026-06-10,South Korea,South Korea Player 16,MID,28,132.7,0.905,1
+2026-06-10,South Korea,South Korea Player 17,MID,27,132.7,0.9,0
+2026-06-10,South Korea,South Korea Player 18,MID,28,130.9,0.912,0
+2026-06-10,South Korea,South Korea Player 19,MID,26,135.3,0.847,0
+2026-06-10,South Korea,South Korea Player 20,ATT,29,131.5,0.895,0
+2026-06-10,South Korea,South Korea Player 21,ATT,30,125.1,0.939,0
+2026-06-10,South Korea,South Korea Player 22,ATT,19,131.7,0.864,0
+2026-06-10,South Korea,South Korea Player 23,ATT,21,132.0,1.0,0
+2026-06-10,South Korea,South Korea Player 24,ATT,23,118.4,0.878,0
+2026-06-10,South Korea,South Korea Player 25,ATT,27,116.9,0.91,0
+2026-06-10,South Korea,South Korea Player 26,ATT,29,123.5,0.936,0
+2026-06-10,Spain,Spain Player 1,GK,31,182.1,0.927,0
+2026-06-10,Spain,Spain Player 2,GK,21,177.5,0.937,0
+2026-06-10,Spain,Spain Player 3,GK,30,180.8,0.944,0
+2026-06-10,Spain,Spain Player 4,DEF,32,171.9,0.934,0
+2026-06-10,Spain,Spain Player 5,DEF,31,176.1,0.951,0
+2026-06-10,Spain,Spain Player 6,DEF,31,182.0,0.984,0
+2026-06-10,Spain,Spain Player 7,DEF,30,179.8,0.968,0
+2026-06-10,Spain,Spain Player 8,DEF,27,181.8,0.815,0
+2026-06-10,Spain,Spain Player 9,DEF,24,180.9,0.915,0
+2026-06-10,Spain,Spain Player 10,DEF,27,179.8,0.956,0
+2026-06-10,Spain,Spain Player 11,DEF,29,172.5,0.905,0
+2026-06-10,Spain,Spain Player 12,MID,32,176.9,0.892,0
+2026-06-10,Spain,Spain Player 13,MID,24,152.9,0.885,0
+2026-06-10,Spain,Spain Player 14,MID,22,171.1,0.969,0
+2026-06-10,Spain,Spain Player 15,MID,28,167.5,0.828,0
+2026-06-10,Spain,Spain Player 16,MID,24,170.1,0.844,0
+2026-06-10,Spain,Spain Player 17,MID,29,175.9,0.931,0
+2026-06-10,Spain,Spain Player 18,MID,27,155.1,0.847,0
+2026-06-10,Spain,Spain Player 19,MID,29,167.3,0.971,1
+2026-06-10,Spain,Spain Player 20,ATT,29,155.4,0.895,0
+2026-06-10,Spain,Spain Player 21,ATT,22,157.0,0.861,0
+2026-06-10,Spain,Spain Player 22,ATT,27,170.7,0.924,0
+2026-06-10,Spain,Spain Player 23,ATT,23,170.6,0.933,0
+2026-06-10,Spain,Spain Player 24,ATT,23,154.4,0.932,0
+2026-06-10,Spain,Spain Player 25,ATT,31,157.2,0.913,0
+2026-06-10,Spain,Spain Player 26,ATT,30,155.5,0.953,0
+2026-06-10,Sweden,Sweden Player 1,GK,28,146.7,0.936,0
+2026-06-10,Sweden,Sweden Player 2,GK,28,133.0,0.887,1
+2026-06-10,Sweden,Sweden Player 3,GK,24,136.0,0.933,0
+2026-06-10,Sweden,Sweden Player 4,DEF,29,136.5,0.866,0
+2026-06-10,Sweden,Sweden Player 5,DEF,20,135.4,0.921,0
+2026-06-10,Sweden,Sweden Player 6,DEF,26,132.8,0.839,0
+2026-06-10,Sweden,Sweden Player 7,DEF,33,132.4,0.903,0
+2026-06-10,Sweden,Sweden Player 8,DEF,28,131.6,1.0,0
+2026-06-10,Sweden,Sweden Player 9,DEF,24,123.4,0.965,0
+2026-06-10,Sweden,Sweden Player 10,DEF,25,123.6,0.96,0
+2026-06-10,Sweden,Sweden Player 11,DEF,27,115.6,0.9,0
+2026-06-10,Sweden,Sweden Player 12,MID,26,126.0,0.944,0
+2026-06-10,Sweden,Sweden Player 13,MID,31,122.0,0.915,0
+2026-06-10,Sweden,Sweden Player 14,MID,32,132.0,0.867,0
+2026-06-10,Sweden,Sweden Player 15,MID,30,129.8,0.942,0
+2026-06-10,Sweden,Sweden Player 16,MID,25,118.9,0.91,0
+2026-06-10,Sweden,Sweden Player 17,MID,21,117.9,0.898,0
+2026-06-10,Sweden,Sweden Player 18,MID,32,131.2,0.886,0
+2026-06-10,Sweden,Sweden Player 19,MID,25,115.8,0.942,0
+2026-06-10,Sweden,Sweden Player 20,ATT,30,123.3,0.919,0
+2026-06-10,Sweden,Sweden Player 21,ATT,29,116.6,0.912,0
+2026-06-10,Sweden,Sweden Player 22,ATT,24,111.7,0.953,0
+2026-06-10,Sweden,Sweden Player 23,ATT,24,128.8,0.904,0
+2026-06-10,Sweden,Sweden Player 24,ATT,28,111.7,0.916,0
+2026-06-10,Sweden,Sweden Player 25,ATT,30,116.2,0.96,0
+2026-06-10,Sweden,Sweden Player 26,ATT,26,106.7,0.892,0
+2026-06-10,Switzerland,Switzerland Player 1,GK,30,155.8,0.82,0
+2026-06-10,Switzerland,Switzerland Player 2,GK,27,173.0,0.997,0
+2026-06-10,Switzerland,Switzerland Player 3,GK,27,151.5,0.878,0
+2026-06-10,Switzerland,Switzerland Player 4,DEF,26,146.0,0.909,0
+2026-06-10,Switzerland,Switzerland Player 5,DEF,23,150.3,0.909,1
+2026-06-10,Switzerland,Switzerland Player 6,DEF,23,148.1,0.828,0
+2026-06-10,Switzerland,Switzerland Player 7,DEF,29,154.0,0.965,0
+2026-06-10,Switzerland,Switzerland Player 8,DEF,28,149.8,0.911,0
+2026-06-10,Switzerland,Switzerland Player 9,DEF,27,142.8,0.987,0
+2026-06-10,Switzerland,Switzerland Player 10,DEF,22,151.0,0.896,0
+2026-06-10,Switzerland,Switzerland Player 11,DEF,24,139.8,0.941,0
+2026-06-10,Switzerland,Switzerland Player 12,MID,27,143.4,0.878,0
+2026-06-10,Switzerland,Switzerland Player 13,MID,30,147.1,0.835,0
+2026-06-10,Switzerland,Switzerland Player 14,MID,26,152.2,0.949,0
+2026-06-10,Switzerland,Switzerland Player 15,MID,28,143.4,0.926,0
+2026-06-10,Switzerland,Switzerland Player 16,MID,24,130.3,0.935,0
+2026-06-10,Switzerland,Switzerland Player 17,MID,21,140.4,0.966,0
+2026-06-10,Switzerland,Switzerland Player 18,MID,25,138.2,0.886,0
+2026-06-10,Switzerland,Switzerland Player 19,MID,26,145.5,0.925,0
+2026-06-10,Switzerland,Switzerland Player 20,ATT,26,139.9,0.857,0
+2026-06-10,Switzerland,Switzerland Player 21,ATT,30,139.1,0.961,0
+2026-06-10,Switzerland,Switzerland Player 22,ATT,27,140.6,0.998,0
+2026-06-10,Switzerland,Switzerland Player 23,ATT,28,148.0,0.896,0
+2026-06-10,Switzerland,Switzerland Player 24,ATT,27,132.5,0.945,0
+2026-06-10,Switzerland,Switzerland Player 25,ATT,25,137.0,0.908,0
+2026-06-10,Switzerland,Switzerland Player 26,ATT,28,140.8,0.891,0
+2026-06-10,Tunisia,Tunisia Player 1,GK,22,136.4,0.876,0
+2026-06-10,Tunisia,Tunisia Player 2,GK,27,139.2,0.96,0
+2026-06-10,Tunisia,Tunisia Player 3,GK,30,128.2,0.943,0
+2026-06-10,Tunisia,Tunisia Player 4,DEF,34,120.1,0.935,0
+2026-06-10,Tunisia,Tunisia Player 5,DEF,30,132.7,0.923,0
+2026-06-10,Tunisia,Tunisia Player 6,DEF,28,127.4,0.929,0
+2026-06-10,Tunisia,Tunisia Player 7,DEF,28,127.2,0.955,0
+2026-06-10,Tunisia,Tunisia Player 8,DEF,26,123.4,0.936,0
+2026-06-10,Tunisia,Tunisia Player 9,DEF,27,125.8,0.903,0
+2026-06-10,Tunisia,Tunisia Player 10,DEF,26,129.0,0.996,0
+2026-06-10,Tunisia,Tunisia Player 11,DEF,28,126.4,0.901,0
+2026-06-10,Tunisia,Tunisia Player 12,MID,24,124.0,0.951,0
+2026-06-10,Tunisia,Tunisia Player 13,MID,26,125.9,0.909,0
+2026-06-10,Tunisia,Tunisia Player 14,MID,25,123.5,0.885,0
+2026-06-10,Tunisia,Tunisia Player 15,MID,28,128.9,0.904,0
+2026-06-10,Tunisia,Tunisia Player 16,MID,31,120.6,1.0,0
+2026-06-10,Tunisia,Tunisia Player 17,MID,25,118.7,0.942,0
+2026-06-10,Tunisia,Tunisia Player 18,MID,32,122.1,0.891,0
+2026-06-10,Tunisia,Tunisia Player 19,MID,22,120.9,0.872,0
+2026-06-10,Tunisia,Tunisia Player 20,ATT,24,113.3,0.935,0
+2026-06-10,Tunisia,Tunisia Player 21,ATT,28,116.5,0.882,1
+2026-06-10,Tunisia,Tunisia Player 22,ATT,27,116.8,0.898,0
+2026-06-10,Tunisia,Tunisia Player 23,ATT,25,110.1,0.883,0
+2026-06-10,Tunisia,Tunisia Player 24,ATT,23,109.2,0.979,0
+2026-06-10,Tunisia,Tunisia Player 25,ATT,33,101.7,0.953,0
+2026-06-10,Tunisia,Tunisia Player 26,ATT,21,112.6,0.928,0
+2026-06-10,Turkey,Turkey Player 1,GK,30,148.9,0.905,0
+2026-06-10,Turkey,Turkey Player 2,GK,23,159.3,0.921,0
+2026-06-10,Turkey,Turkey Player 3,GK,16,159.1,0.94,0
+2026-06-10,Turkey,Turkey Player 4,DEF,24,162.6,0.89,0
+2026-06-10,Turkey,Turkey Player 5,DEF,26,140.3,0.947,0
+2026-06-10,Turkey,Turkey Player 6,DEF,24,150.0,1.0,1
+2026-06-10,Turkey,Turkey Player 7,DEF,30,149.2,0.928,0
+2026-06-10,Turkey,Turkey Player 8,DEF,30,151.8,0.88,0
+2026-06-10,Turkey,Turkey Player 9,DEF,27,144.9,0.878,1
+2026-06-10,Turkey,Turkey Player 10,DEF,22,151.8,0.89,0
+2026-06-10,Turkey,Turkey Player 11,DEF,20,152.2,0.908,0
+2026-06-10,Turkey,Turkey Player 12,MID,33,145.9,0.929,0
+2026-06-10,Turkey,Turkey Player 13,MID,29,142.1,0.985,0
+2026-06-10,Turkey,Turkey Player 14,MID,25,145.7,1.0,0
+2026-06-10,Turkey,Turkey Player 15,MID,28,141.1,0.89,0
+2026-06-10,Turkey,Turkey Player 16,MID,32,135.1,0.93,0
+2026-06-10,Turkey,Turkey Player 17,MID,26,140.3,0.889,0
+2026-06-10,Turkey,Turkey Player 18,MID,25,147.0,0.896,0
+2026-06-10,Turkey,Turkey Player 19,MID,31,134.6,0.884,0
+2026-06-10,Turkey,Turkey Player 20,ATT,25,145.6,0.952,0
+2026-06-10,Turkey,Turkey Player 21,ATT,31,137.2,0.925,0
+2026-06-10,Turkey,Turkey Player 22,ATT,35,135.8,0.908,0
+2026-06-10,Turkey,Turkey Player 23,ATT,27,128.9,0.939,0
+2026-06-10,Turkey,Turkey Player 24,ATT,27,142.4,0.902,0
+2026-06-10,Turkey,Turkey Player 25,ATT,24,143.3,0.935,0
+2026-06-10,Turkey,Turkey Player 26,ATT,30,137.7,0.809,0
+2026-06-10,United States,United States Player 1,GK,29,140.1,0.902,0
+2026-06-10,United States,United States Player 2,GK,25,138.9,0.94,0
+2026-06-10,United States,United States Player 3,GK,25,145.6,0.849,0
+2026-06-10,United States,United States Player 4,DEF,25,135.2,0.87,0
+2026-06-10,United States,United States Player 5,DEF,24,134.0,0.909,0
+2026-06-10,United States,United States Player 6,DEF,23,140.1,0.93,0
+2026-06-10,United States,United States Player 7,DEF,30,136.2,0.942,0
+2026-06-10,United States,United States Player 8,DEF,23,136.7,0.88,0
+2026-06-10,United States,United States Player 9,DEF,34,140.3,0.92,0
+2026-06-10,United States,United States Player 10,DEF,24,133.7,0.887,0
+2026-06-10,United States,United States Player 11,DEF,31,132.0,0.95,0
+2026-06-10,United States,United States Player 12,MID,27,135.7,0.927,0
+2026-06-10,United States,United States Player 13,MID,26,136.7,0.868,0
+2026-06-10,United States,United States Player 14,MID,28,135.2,0.922,0
+2026-06-10,United States,United States Player 15,MID,28,132.7,0.922,0
+2026-06-10,United States,United States Player 16,MID,28,126.7,0.96,0
+2026-06-10,United States,United States Player 17,MID,26,115.6,0.873,0
+2026-06-10,United States,United States Player 18,MID,23,131.5,0.87,0
+2026-06-10,United States,United States Player 19,MID,27,128.0,0.904,0
+2026-06-10,United States,United States Player 20,ATT,22,128.9,0.91,0
+2026-06-10,United States,United States Player 21,ATT,19,127.4,0.892,0
+2026-06-10,United States,United States Player 22,ATT,30,117.1,0.976,0
+2026-06-10,United States,United States Player 23,ATT,26,120.3,0.829,0
+2026-06-10,United States,United States Player 24,ATT,22,113.8,0.965,0
+2026-06-10,United States,United States Player 25,ATT,27,117.2,0.965,0
+2026-06-10,United States,United States Player 26,ATT,26,117.2,0.924,0
+2026-06-10,Uruguay,Uruguay Player 1,GK,29,158.7,0.973,0
+2026-06-10,Uruguay,Uruguay Player 2,GK,22,155.6,0.854,0
+2026-06-10,Uruguay,Uruguay Player 3,GK,30,163.5,0.938,0
+2026-06-10,Uruguay,Uruguay Player 4,DEF,25,153.7,0.921,0
+2026-06-10,Uruguay,Uruguay Player 5,DEF,24,153.4,0.864,0
+2026-06-10,Uruguay,Uruguay Player 6,DEF,30,169.3,0.927,0
+2026-06-10,Uruguay,Uruguay Player 7,DEF,31,142.7,0.857,0
+2026-06-10,Uruguay,Uruguay Player 8,DEF,31,153.4,0.912,0
+2026-06-10,Uruguay,Uruguay Player 9,DEF,25,148.3,0.902,0
+2026-06-10,Uruguay,Uruguay Player 10,DEF,26,147.5,0.915,0
+2026-06-10,Uruguay,Uruguay Player 11,DEF,24,155.1,0.907,0
+2026-06-10,Uruguay,Uruguay Player 12,MID,23,144.2,0.911,0
+2026-06-10,Uruguay,Uruguay Player 13,MID,27,152.5,0.901,0
+2026-06-10,Uruguay,Uruguay Player 14,MID,27,148.9,0.891,0
+2026-06-10,Uruguay,Uruguay Player 15,MID,23,157.5,0.858,1
+2026-06-10,Uruguay,Uruguay Player 16,MID,26,152.5,0.989,0
+2026-06-10,Uruguay,Uruguay Player 17,MID,31,134.1,0.993,0
+2026-06-10,Uruguay,Uruguay Player 18,MID,28,143.3,0.886,0
+2026-06-10,Uruguay,Uruguay Player 19,MID,28,134.1,0.936,0
+2026-06-10,Uruguay,Uruguay Player 20,ATT,24,146.6,0.892,0
+2026-06-10,Uruguay,Uruguay Player 21,ATT,29,133.7,0.924,0
+2026-06-10,Uruguay,Uruguay Player 22,ATT,31,139.8,0.948,0
+2026-06-10,Uruguay,Uruguay Player 23,ATT,23,137.4,0.945,0
+2026-06-10,Uruguay,Uruguay Player 24,ATT,32,138.9,0.984,0
+2026-06-10,Uruguay,Uruguay Player 25,ATT,25,130.5,0.927,0
+2026-06-10,Uruguay,Uruguay Player 26,ATT,28,135.5,0.93,0
+2026-06-10,Uzbekistan,Uzbekistan Player 1,GK,34,143.8,0.928,0
+2026-06-10,Uzbekistan,Uzbekistan Player 2,GK,25,134.9,0.895,0
+2026-06-10,Uzbekistan,Uzbekistan Player 3,GK,28,148.5,0.865,0
+2026-06-10,Uzbekistan,Uzbekistan Player 4,DEF,31,131.1,0.956,0
+2026-06-10,Uzbekistan,Uzbekistan Player 5,DEF,27,128.3,0.892,0
+2026-06-10,Uzbekistan,Uzbekistan Player 6,DEF,30,135.8,0.912,0
+2026-06-10,Uzbekistan,Uzbekistan Player 7,DEF,27,139.3,0.951,0
+2026-06-10,Uzbekistan,Uzbekistan Player 8,DEF,37,138.7,0.998,0
+2026-06-10,Uzbekistan,Uzbekistan Player 9,DEF,21,137.8,0.857,0
+2026-06-10,Uzbekistan,Uzbekistan Player 10,DEF,26,125.8,0.925,0
+2026-06-10,Uzbekistan,Uzbekistan Player 11,DEF,26,129.5,0.974,0
+2026-06-10,Uzbekistan,Uzbekistan Player 12,MID,27,134.4,0.893,0
+2026-06-10,Uzbekistan,Uzbekistan Player 13,MID,35,127.3,0.985,0
+2026-06-10,Uzbekistan,Uzbekistan Player 14,MID,27,127.2,0.932,0
+2026-06-10,Uzbekistan,Uzbekistan Player 15,MID,29,124.9,0.879,0
+2026-06-10,Uzbekistan,Uzbekistan Player 16,MID,31,132.4,0.978,0
+2026-06-10,Uzbekistan,Uzbekistan Player 17,MID,23,125.5,0.96,0
+2026-06-10,Uzbekistan,Uzbekistan Player 18,MID,23,131.9,0.898,0
+2026-06-10,Uzbekistan,Uzbekistan Player 19,MID,22,129.3,0.925,0
+2026-06-10,Uzbekistan,Uzbekistan Player 20,ATT,25,126.6,0.968,0
+2026-06-10,Uzbekistan,Uzbekistan Player 21,ATT,33,125.8,0.914,0
+2026-06-10,Uzbekistan,Uzbekistan Player 22,ATT,28,122.0,0.928,0
+2026-06-10,Uzbekistan,Uzbekistan Player 23,ATT,32,130.3,0.976,0
+2026-06-10,Uzbekistan,Uzbekistan Player 24,ATT,27,116.6,0.914,0
+2026-06-10,Uzbekistan,Uzbekistan Player 25,ATT,29,107.7,0.908,0
+2026-06-10,Uzbekistan,Uzbekistan Player 26,ATT,28,123.1,0.936,0

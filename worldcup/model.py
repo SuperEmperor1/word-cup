@@ -106,18 +106,22 @@ class Ensemble:
     meta: LogisticRegression | None = None
     temp: float = 1.0
     feature_cols: list[str] = field(default_factory=lambda: list(FEATURE_COLS))
+    active_cols: list[str] = field(default_factory=list)
 
     # ------------------------------------------------ 基模型
     def fit_base(self, X: pd.DataFrame, y: np.ndarray) -> None:
+        # 训练期内无任何观测的特征列 (如尚未积累的外部数据快照) 剔除:
+        # 树模型从全缺失列学不到分裂, 且会让分箱崩溃; 赔率走市场锚定通路。
+        self.active_cols = [c for c in self.feature_cols if X[c].notna().any()]
         self.gbm = HistGradientBoostingClassifier(
             loss="log_loss", max_iter=500, learning_rate=0.05,
             max_leaf_nodes=31, l2_regularization=1.0, min_samples_leaf=40,
             early_stopping=True, validation_fraction=0.12, random_state=42)
-        self.gbm.fit(X[self.feature_cols], y)
+        self.gbm.fit(X[self.active_cols], y)
         self.ol = OrderedLogit().fit(X, y)
 
     def gbm_probs(self, X: pd.DataFrame) -> np.ndarray:
-        return self.gbm.predict_proba(X[self.feature_cols])
+        return self.gbm.predict_proba(X[self.active_cols])
 
     def dc_probs_rows(self, rows: pd.DataFrame) -> np.ndarray:
         out = np.empty((len(rows), 3))
@@ -167,9 +171,21 @@ class Ensemble:
         Z = self._meta_design(p_dc, p_ml, p_ol, rows)
         return self._temper(self.meta.predict_proba(Z), self.temp)
 
-    def predict_rows(self, rows: pd.DataFrame) -> np.ndarray:
-        """rows 须含特征列 + home_team/away_team/neutral/elo_*。"""
-        return self.blend(rows)
+    def predict_rows(self, rows: pd.DataFrame,
+                     market_anchor: float = 0.30) -> np.ndarray:
+        """rows 须含特征列 + home_team/away_team/neutral/elo_*。
+
+        market_anchor: 若行内含去水市场概率 (mkt_*), 以该权重与模型线性池。
+        博彩收盘价是文献公认最强单一预测源; 在历史赔率快照不足以让 GBM
+        从特征通路学习之前, 固定权重锚定是无需训练的稳健利用方式。
+        """
+        p = self.blend(rows)
+        if market_anchor > 0 and "mkt_ph" in rows.columns:
+            mkt = rows[["mkt_ph", "mkt_pd", "mkt_pa"]].to_numpy(float)
+            has = ~np.isnan(mkt).any(axis=1)
+            if has.any():
+                p[has] = (1 - market_anchor) * p[has] + market_anchor * mkt[has]
+        return p
 
     def save(self, path: str) -> None:
         with open(path, "wb") as f:
