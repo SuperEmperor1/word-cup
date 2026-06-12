@@ -50,3 +50,16 @@ Shin 去水已处理。其他来源（含外围盘口）只要落成同 schema �
    [−120, +60]），只作用于未来比赛的预测行，无需重训即时生效；
 3. **市场锚定**：预测行带赔率时，最终概率 = 0.7·模型 + 0.3·去水市场
    （`Ensemble.predict_rows(market_anchor=...)` 可调）。
+
+## 首发名单预测（lineups 模块）
+
+| 文件 | schema | 用途 |
+|---|---|---|
+| projected_lineups.csv | date,team,formation,player,position,source | 媒体共识预测 XI（赛前 4 天内有效，优先使用，经验准确率 ~85%）|
+| lineups.csv | date,team,formation,player,position,started | 历史出场记录 → 教练任期加权(×3) + 半衰期 180 天的首发概率推断 |
+| squads.csv | team,player,position,injured,key_player | 大名单与伤病；核心(key)伤员每人 −8 Elo，上限 −40 |
+| coaches.csv | team,coach,since | 现任教练任期起点（"教练喜好"加权窗口）|
+
+用法: `python scripts/predict_lineup.py "Brazil"`；
+单场预测加 `--lineup` 自动应用核心缺阵修正。
+当前已含 2026-06-13 巴西/摩洛哥的真实媒体共识数据（SportsMole/RotoWire 等）。

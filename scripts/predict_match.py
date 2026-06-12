@@ -21,13 +21,33 @@ from worldcup.model import Ensemble
 from worldcup.pipeline import hypothetical_rows
 
 
-def predict_one(ens, raw, home, away, date, neutral=True):
+def predict_one(ens, raw, home, away, date, neutral=True, use_lineup=False):
     rows = hypothetical_rows(raw, [(home, away)], pd.Timestamp(date), neutral)
+    lineup_info = None
+    if use_lineup:
+        from worldcup.elo import expected_score
+        from worldcup.lineups import LineupPredictor
+        lp = LineupPredictor.discover()
+        d = pd.Timestamp(date)
+        ph, pa = lp.predict(home, d), lp.predict(away, d)
+        adj_h = ph["elo_adjustment"] if ph else 0.0
+        adj_a = pa["elo_adjustment"] if pa else 0.0
+        if adj_h or adj_a:
+            rows["elo_home"] += adj_h
+            rows["elo_away"] += adj_a
+            rows["elo_diff"] = rows["elo_home"] - rows["elo_away"] \
+                + (0.0 if neutral else 80.0)
+            rows["elo_sum"] = rows["elo_home"] + rows["elo_away"]
+            rows["elo_exp_home"] = expected_score(
+                float(rows.iloc[0]["elo_home"]),
+                float(rows.iloc[0]["elo_away"]), neutral)
+        lineup_info = (ph, pa, adj_h, adj_a)
     p = ens.predict_rows(rows)[0]
     lam, mu = ens.rates_row(rows.iloc[0])
     M = adjust_matrix(ens.dc.score_matrix(lam, mu), p)
     rep = market_report(M)
     rep.update(lambda_mu=(lam, mu), matrix=M, rows=rows,
+               lineup_info=lineup_info,
                elo=(float(rows.iloc[0]["elo_home"]),
                     float(rows.iloc[0]["elo_away"])))
     return rep
@@ -91,6 +111,8 @@ def main():
     ap.add_argument("--scorers", action="store_true", help="进球者概率")
     ap.add_argument("--explain", action="store_true", help="特征族归因")
     ap.add_argument("--uncertainty", action="store_true", help="概率区间")
+    ap.add_argument("--lineup", action="store_true",
+                    help="预测首发并应用核心缺阵修正")
     args = ap.parse_args()
 
     ens = Ensemble.load("models/ensemble.pkl")
@@ -98,7 +120,7 @@ def main():
     date = args.date or (raw[raw["played"]]["date"].max()
                          + pd.Timedelta(days=1)).strftime("%Y-%m-%d")
     rep = predict_one(ens, raw, args.home, args.away, date,
-                      neutral=not args.is_home)
+                      neutral=not args.is_home, use_lineup=args.lineup)
     h, d, a = rep["hda"]
     lam, mu = rep["lambda_mu"]
     print(f"\n=== {args.home} vs {args.away} ({date}) ===")
@@ -113,6 +135,18 @@ def main():
     print(f"双方进球 BTTS: {rep['btts']:.1%}")
     print("总进球分布: " + "  ".join(
         f"{g}球 {p:.1%}" for g, p in rep["goals_dist"].items()))
+
+    if args.lineup and rep.get("lineup_info"):
+        ph, pa, adj_h, adj_a = rep["lineup_info"]
+        for team, pred, adj in ((args.home, ph, adj_h), (args.away, pa, adj_a)):
+            if pred:
+                xi = " ".join(p for p, *_ in pred["xi"])
+                miss = ("; 核心缺阵: " + ", ".join(pred["missing_starters"])
+                        + f" (Elo {adj:+.0f})") if pred["missing_starters"] else ""
+                print(f"\n{team} {pred['formation']} "
+                      f"(确定度 {pred['certainty']:.0%}): {xi}{miss}")
+            else:
+                print(f"\n{team}: 无名单数据")
 
     if args.uncertainty:
         lo, hi = uncertainty_band(ens, rep["rows"])
