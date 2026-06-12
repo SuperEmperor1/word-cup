@@ -7,3 +7,4 @@ bash scripts/update_data.sh
 python3 scripts/train.py --no-backtest
 python3 scripts/archive_predictions.py
 python3 scripts/score_archive.py
+python3 scripts/build_site.py

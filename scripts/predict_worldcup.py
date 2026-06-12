@@ -79,6 +79,10 @@ def main():
                               shootout_params=(so_b, so_c),
                               n_worlds=args.worlds)
     res = sim.simulate(groups, group_fixtures, n_sims=args.sims)
+    import json
+    os.makedirs("models", exist_ok=True)
+    with open("models/sim_results.json", "w") as f:
+        json.dump({k: dict(v) for k, v in res.items()}, f, ensure_ascii=False)
 
     print(f"\n{'球队':<22}{'夺冠':>8}{'进决赛':>8}{'进四强':>8}{'出线':>8}")
     for t, p in list(res["champion"].items())[:20]:
