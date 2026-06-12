@@ -7,11 +7,14 @@
 """
 from __future__ import annotations
 
+import os
+import pickle
+
 import numpy as np
 import pandas as pd
 
-from .data import (K_WORLD_CUP, load_centroids, load_goal_events,
-                   load_matches, outcome_labels)
+from .data import (CITY_ALTITUDES, K_WORLD_CUP, load_centroids,
+                   load_goal_events, load_matches, outcome_labels)
 from .dixon_coles import DixonColes
 from .elo import compute_elo_history, expected_score
 from .external import ExternalData
@@ -19,16 +22,48 @@ from .features import build_features
 from .model import Ensemble
 
 
+def _cache_key() -> str:
+    import hashlib
+    from .data import DATA_PATH
+    from .external import EXTERNAL_DIR
+    parts = []
+    for p in [DATA_PATH] + sorted(
+            os.path.join(EXTERNAL_DIR, f)
+            for f in (os.listdir(EXTERNAL_DIR)
+                      if os.path.isdir(EXTERNAL_DIR) else [])
+            if f.endswith(".csv")):
+        st = os.stat(p)
+        parts.append(f"{p}:{st.st_size}:{st.st_mtime_ns}")
+    return hashlib.md5("|".join(parts).encode()).hexdigest()[:16]
+
+
 def prepare(path: str | None = None,
-            external: ExternalData | None = None
-            ) -> tuple[pd.DataFrame, dict[str, float]]:
-    """加载全部数据源并构建 Elo + 75 维特征。返回 (特征表, 当前 Elo)。"""
+            external: ExternalData | None = None,
+            use_cache: bool = True) -> tuple[pd.DataFrame, dict[str, float]]:
+    """加载全部数据源并构建 Elo + 全部特征。返回 (特征表, 当前 Elo)。
+
+    结果按数据文件指纹缓存到磁盘 (数据或外部快照变化自动失效)。
+    """
+    cache = None
+    if use_cache and path is None:
+        cache = os.path.join(os.path.dirname(__file__), "..", "data",
+                             f".cache_feat_{_cache_key()}.pkl")
+        if os.path.exists(cache):
+            with open(cache, "rb") as f:
+                return pickle.load(f)
     if external is None:
         external = ExternalData.discover()
     df = load_matches(path) if path else load_matches()
     df, ratings = compute_elo_history(df)
     feat = build_features(df, goal_events=load_goal_events(),
-                          centroids=load_centroids(), external=external)
+                          centroids=load_centroids(), external=external,
+                          city_alt=CITY_ALTITUDES)
+    if cache:
+        for old in os.listdir(os.path.dirname(cache)):
+            if old.startswith(".cache_feat_"):
+                os.remove(os.path.join(os.path.dirname(cache), old))
+        with open(cache, "wb") as f:
+            pickle.dump((feat, ratings), f)
     return feat, ratings
 
 
@@ -73,7 +108,8 @@ def hypothetical_rows(raw: pd.DataFrame, pairs: list[tuple[str, str]],
         "date", kind="stable").reset_index(drop=True)
     alld, _ = compute_elo_history(alld)
     feat = build_features(alld, goal_events=load_goal_events(),
-                          centroids=load_centroids(), external=external)
+                          centroids=load_centroids(), external=external,
+                          city_alt=CITY_ALTITUDES)
     rows = feat[~feat["played"]].tail(len(pairs)).reset_index(drop=True)
     return apply_external_adjustments(rows, external)
 

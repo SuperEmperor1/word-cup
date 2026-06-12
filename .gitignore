@@ -2,3 +2,5 @@ __pycache__/
 *.pyc
 models/*.pkl
 .venv/
+data/.cache_feat_*.pkl
+predictions/

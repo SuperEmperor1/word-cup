@@ -108,6 +108,53 @@ def test_rps_perfect_and_uniform():
     assert 0 < rps(uniform, y) < 0.5
 
 
+
+
+def test_third_place_matching_all_combos():
+    """官方槽位约束下, 495 种第三名晋级组合必须全部存在完美匹配。"""
+    from itertools import combinations
+    from worldcup.simulate import assign_thirds, THIRD_SLOTS
+    fail = 0
+    for combo in combinations("ABCDEFGHIJKL", 8):
+        a = assign_thirds(list(combo))
+        if a is None:
+            fail += 1
+        else:
+            assert len(set(a.values())) == 8
+            for m, g in a.items():
+                assert g in THIRD_SLOTS[m]
+    assert fail == 0, f"{fail}/495 组合无法匹配"
+
+
+def test_asian_handicap():
+    from worldcup.markets import asian_handicap
+    dc = DixonColes()
+    dc.rho = -0.05
+    M = dc.score_matrix(1.6, 1.1)
+    # 整数盘 -1: 赢=净胜>=2, 走水=净胜1
+    r = asian_handicap(M, -1.0)
+    n = M.shape[0]
+    diff = np.subtract.outer(np.arange(n), np.arange(n))
+    assert abs(r["win"] - M[diff >= 2].sum()) < 1e-9
+    assert abs(r["push"] - M[diff == 1].sum()) < 1e-9
+    # 四分之一盘 = 相邻半盘均值
+    q = asian_handicap(M, -0.75)
+    a, b = asian_handicap(M, -0.5), asian_handicap(M, -1.0)
+    assert abs(q["win"] - (a["win"] + b["win"]) / 2) < 1e-9
+    # 概率守恒
+    assert abs(sum(r.values()) - 1) < 1e-9
+
+
+def test_half_time_report():
+    from worldcup.markets import half_time_report
+    dc = DixonColes()
+    dc.rho = -0.05
+    ht = half_time_report(dc, 1.5, 1.2)
+    assert abs(sum(ht["ht_hda"]) - 1) < 1e-6
+    assert abs(sum(ht["ht_ft"].values()) - 1) < 1e-3
+    assert ht["ht_hda"][1] > 0.3  # 半场平局应是高概率
+
+
 if __name__ == "__main__":
     for name, fn in sorted(globals().items()):
         if name.startswith("test_"):

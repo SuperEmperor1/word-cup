@@ -42,6 +42,8 @@ class DixonColes:
     teams: list[str] = field(default_factory=list)
     att: np.ndarray | None = None
     deff: np.ndarray | None = None
+    att_se: np.ndarray | None = None
+    def_se: np.ndarray | None = None
     home_adv: float = 0.25
     rho: float = -0.05
     _idx: dict[str, int] = field(default_factory=dict)
@@ -131,8 +133,23 @@ class DixonColes:
         res = minimize(nll_grad, p0, jac=True, method="L-BFGS-B",
                        bounds=bounds, options={"maxiter": 500})
         self.att, self.deff, self.home_adv, self.rho = unpack(res.x)
+
+        # 每队攻防参数的 Fisher 标准误 (泊松信息量 I(att_i) = Σ w·λ)
+        lam = np.exp(self.att[hi] + self.deff[ai] + self.home_adv * home)
+        mu = np.exp(self.att[ai] + self.deff[hi])
+        i_att = np.bincount(hi, w * lam, nT) + np.bincount(ai, w * mu, nT)
+        i_def = np.bincount(ai, w * lam, nT) + np.bincount(hi, w * mu, nT)
+        self.att_se = 1.0 / np.sqrt(i_att + 2 * self.l2)
+        self.def_se = 1.0 / np.sqrt(i_def + 2 * self.l2)
         self._fit_fallback(d)
         return self
+
+    def strength_se(self, team: str) -> tuple[float, float]:
+        """(att 标准误, def 标准误); 拟合集外球队给保守值。"""
+        i = self._idx.get(team)
+        if i is None or self.att_se is None:
+            return 0.20, 0.20
+        return float(self.att_se[i]), float(self.def_se[i])
 
     def _fit_fallback(self, d: pd.DataFrame) -> None:
         """用 Elo 差 -> 进球数 的对数线性回归覆盖拟合集外的球队。"""

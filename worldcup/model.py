@@ -17,7 +17,8 @@ import numpy as np
 import pandas as pd
 from scipy.optimize import minimize, minimize_scalar
 from scipy.special import expit
-from sklearn.ensemble import HistGradientBoostingClassifier
+from sklearn.ensemble import (HistGradientBoostingClassifier,
+                              HistGradientBoostingRegressor)
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import cross_val_predict
 
@@ -101,10 +102,15 @@ META_CTX = ["importance", "neutral_f"]
 @dataclass
 class Ensemble:
     gbm: HistGradientBoostingClassifier | None = None
+    gbm_draw: HistGradientBoostingClassifier | None = None
+    xg_h: HistGradientBoostingRegressor | None = None
+    xg_a: HistGradientBoostingRegressor | None = None
     dc: DixonColes | None = None
     ol: OrderedLogit | None = None
     meta: LogisticRegression | None = None
     temp: float = 1.0
+    xg_weight: float = 0.0     # λ/μ 的 xG-GBM 混合权重 (验证集调)
+    goal_scale: float = 1.0    # 全局进球尺度校准 (验证集调)
     feature_cols: list[str] = field(default_factory=lambda: list(FEATURE_COLS))
     active_cols: list[str] = field(default_factory=list)
 
@@ -113,11 +119,20 @@ class Ensemble:
         # 训练期内无任何观测的特征列 (如尚未积累的外部数据快照) 剔除:
         # 树模型从全缺失列学不到分裂, 且会让分箱崩溃; 赔率走市场锚定通路。
         self.active_cols = [c for c in self.feature_cols if X[c].notna().any()]
-        self.gbm = HistGradientBoostingClassifier(
-            loss="log_loss", max_iter=500, learning_rate=0.05,
-            max_leaf_nodes=31, l2_regularization=1.0, min_samples_leaf=40,
-            early_stopping=True, validation_fraction=0.12, random_state=42)
+        params = dict(max_iter=500, learning_rate=0.05, max_leaf_nodes=31,
+                      l2_regularization=1.0, min_samples_leaf=40,
+                      early_stopping=True, validation_fraction=0.12,
+                      random_state=42)
+        self.gbm = HistGradientBoostingClassifier(loss="log_loss", **params)
         self.gbm.fit(X[self.active_cols], y)
+        # 平局专项: 平局是三分类中区分度最弱的, 单独建模后并入元学习器
+        self.gbm_draw = HistGradientBoostingClassifier(loss="log_loss", **params)
+        self.gbm_draw.fit(X[self.active_cols], (y == 1).astype(int))
+        # xG 双头: 直接回归进球数 (Poisson loss), 与 DC 强度互补
+        self.xg_h = HistGradientBoostingRegressor(loss="poisson", **params)
+        self.xg_h.fit(X[self.active_cols], X["home_score"])
+        self.xg_a = HistGradientBoostingRegressor(loss="poisson", **params)
+        self.xg_a.fit(X[self.active_cols], X["away_score"])
         self.ol = OrderedLogit().fit(X, y)
 
     def gbm_probs(self, X: pd.DataFrame) -> np.ndarray:
@@ -137,11 +152,62 @@ class Ensemble:
             p_dc = self.dc_probs_rows(rows)
         return p_dc, self.gbm_probs(rows), self.ol.predict_proba(rows)
 
+    # ------------------------------------------------ 进球强度 (λ, μ)
+    def rates_rows(self, rows: pd.DataFrame) -> np.ndarray:
+        """DC 强度与 xG-GBM 几何混合, 再乘全局尺度校准。返回 (n, 2)。"""
+        n = len(rows)
+        lam, mu = np.empty(n), np.empty(n)
+        for k, (_, r) in enumerate(rows.iterrows()):
+            lam[k], mu[k] = self.dc.rates(r["home_team"], r["away_team"],
+                                          r["neutral"], r["elo_home"],
+                                          r["elo_away"])
+        if self.xg_weight > 0 and self.xg_h is not None:
+            w = self.xg_weight
+            xh = np.maximum(self.xg_h.predict(rows[self.active_cols]), 0.05)
+            xa = np.maximum(self.xg_a.predict(rows[self.active_cols]), 0.05)
+            lam = lam ** (1 - w) * xh ** w
+            mu = mu ** (1 - w) * xa ** w
+        return np.column_stack([lam, mu]) * self.goal_scale
+
+    def rates_row(self, r: pd.Series) -> tuple[float, float]:
+        out = self.rates_rows(r.to_frame().T)
+        return float(out[0, 0]), float(out[0, 1])
+
+    def _tune_rates(self, rows: pd.DataFrame) -> None:
+        """在验证期上以比分对数似然联合调 (xg_weight, goal_scale)。
+
+        动机: 1X2 校准良好不保证进球强度无偏 —— 市场回测曾发现大小球
+        被系统性低估, 此处显式校准比分分布本身。
+        """
+        hs = np.minimum(rows["home_score"].to_numpy(int), 10)
+        as_ = np.minimum(rows["away_score"].to_numpy(int), 10)
+        base = self.xg_weight, self.goal_scale
+        self.xg_weight, self.goal_scale = 0.0, 1.0
+        lm0 = self.rates_rows(rows)
+        w_grid = (0.0, 0.15, 0.30, 0.45, 0.60, 0.75)
+        s_grid = (0.95, 1.0, 1.03, 1.06, 1.10)
+        xh = np.maximum(self.xg_h.predict(rows[self.active_cols]), 0.05)
+        xa = np.maximum(self.xg_a.predict(rows[self.active_cols]), 0.05)
+        best = (*base, np.inf)
+        for w in w_grid:
+            lam = lm0[:, 0] ** (1 - w) * xh ** w
+            mu = lm0[:, 1] ** (1 - w) * xa ** w
+            for s in s_grid:
+                ll = 0.0
+                for k in range(len(rows)):
+                    M = self.dc.score_matrix(lam[k] * s, mu[k] * s)
+                    ll -= np.log(max(M[hs[k], as_[k]], _EPS))
+                if ll < best[2]:
+                    best = (w, s, ll)
+        self.xg_weight, self.goal_scale = best[0], best[1]
+
     # ------------------------------------------------ 元学习器
-    @staticmethod
-    def _meta_design(p_dc, p_ml, p_ol, rows: pd.DataFrame) -> np.ndarray:
+    def _meta_design(self, p_dc, p_ml, p_ol, rows: pd.DataFrame) -> np.ndarray:
         logs = [np.log(np.clip(p, _EPS, 1)) for p in (p_dc, p_ml, p_ol)]
-        ctx = np.column_stack([rows["importance"].to_numpy(float) / 60.0,
+        p_dr = np.clip(self.gbm_draw.predict_proba(
+            rows[self.active_cols])[:, 1], _EPS, 1)
+        ctx = np.column_stack([np.log(p_dr),
+                               rows["importance"].to_numpy(float) / 60.0,
                                rows["neutral_f"].to_numpy(float)])
         return np.column_stack(logs + [ctx])
 
@@ -149,6 +215,7 @@ class Ensemble:
                  p_dc: np.ndarray | None = None) -> None:
         p_dc, p_ml, p_ol = self.base_probs(rows, p_dc)
         Z = self._meta_design(p_dc, p_ml, p_ol, rows)
+        self._tune_rates(rows)
         self.meta = LogisticRegression(C=1.0, max_iter=2000)
         # 交叉预测上拟合温度, 避免在元训练数据上自我评估
         cv_pred = cross_val_predict(LogisticRegression(C=1.0, max_iter=2000),

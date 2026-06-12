@@ -38,8 +38,30 @@ def main():
     ens = train_full(feat)
     os.makedirs("models", exist_ok=True)
     ens.save("models/ensemble.pkl")
-    print(f"   元学习器温度 T={ens.temp:.2f}")
-    print(f"   已保存 models/ensemble.pkl, 总耗时 {time.time()-t0:.1f}s")
+    # 版本元数据: 预测可追溯到 数据截止/代码版本/特征数
+    import subprocess
+    done = feat[feat["played"]]
+    try:
+        rev = subprocess.check_output(
+            ["git", "rev-parse", "--short", "HEAD"], text=True).strip()
+    except Exception:
+        rev = "unknown"
+    meta = {
+        "version": f"{done['date'].max().date()}_{rev}",
+        "git_rev": rev,
+        "data_end": str(done["date"].max().date()),
+        "n_matches": int(len(done)),
+        "n_features": len(ens.active_cols),
+        "xg_weight": ens.xg_weight, "goal_scale": ens.goal_scale,
+        "temperature": ens.temp,
+        "trained_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+    }
+    with open("models/metadata.json", "w") as f:
+        json.dump(meta, f, indent=2)
+    print(f"   xG权重={ens.xg_weight:.2f} 尺度={ens.goal_scale:.2f} "
+          f"温度={ens.temp:.2f}")
+    print(f"   已保存 models/ensemble.pkl (版本 {meta['version']}), "
+          f"总耗时 {time.time()-t0:.1f}s")
 
 
 if __name__ == "__main__":

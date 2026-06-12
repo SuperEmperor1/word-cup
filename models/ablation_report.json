@@ -1,0 +1,29 @@
+{
+  "baseline_rps": 0.15741791397079352,
+  "families": {
+    "geo": {
+      "rps_without": 0.15777165811431354,
+      "contribution": 0.00035374414352001837
+    },
+    "player": {
+      "rps_without": 0.15803643837700204,
+      "contribution": 0.0006185244062085204
+    },
+    "progression": {
+      "rps_without": 0.15791199501718736,
+      "contribution": 0.0004940810463938405
+    },
+    "context": {
+      "rps_without": 0.15829123265912862,
+      "contribution": 0.0008733186883350952
+    },
+    "sd_rating": {
+      "rps_without": 0.1583024980959664,
+      "contribution": 0.0008845841251728659
+    },
+    "schedule": {
+      "rps_without": 0.15777060175900218,
+      "contribution": 0.00035268778820865543
+    }
+  }
+}

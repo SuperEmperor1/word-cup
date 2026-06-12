@@ -37,6 +37,7 @@ GOALEV_N = 25          # 球员级特征回看场次
 SD_K = 0.10            # 分数驱动评级学习率
 SD_BASE = 0.20         # log 基准进球率
 LATE_MIN = 75
+EARLY_MAX = 15
 
 CONFED = {"UEFA": 1, "CONMEBOL": 2, "CONCACAF": 3, "CAF": 4, "AFC": 5, "OFC": 6}
 _CONFED_HINTS = [
@@ -64,6 +65,18 @@ FEATURE_COLS = [
     "late_goal_h", "late_goal_a", "late_concede_h", "late_concede_a",
     "pen_share_h", "pen_share_a", "scorer_hhi_h", "scorer_hhi_a",
     "star_form_h", "star_form_a",
+    # 比分演进 (由进球分钟重建)
+    "comeback_h", "comeback_a", "hold_h", "hold_a",
+    "early_goal_h", "early_goal_a", "early_concede_h", "early_concede_a",
+    "pen_concede_h", "pen_concede_a",
+    # 强弱分裂 / 大赛系数 / 稳定性
+    "vs_strong_h", "vs_strong_a", "major_gap_h", "major_gap_a",
+    "elo_vol_h", "elo_vol_a",
+    # 气候与累计旅途
+    "clim_mismatch_h", "clim_mismatch_a", "cumtravel_h", "cumtravel_a",
+    # 海拔 (GeoNames, 缺失为 NaN)
+    "venue_alt", "alt_mismatch_h", "alt_mismatch_a",
+    "rest_diff",
     # 经验与情境
     "major_exp_h", "major_exp_a", "confed_h", "confed_a", "same_confed",
     "h2h_gd", "neutral_f", "importance",
@@ -122,7 +135,8 @@ class _GoalEventIndex:
 def build_features(df: pd.DataFrame,
                    goal_events: pd.DataFrame | None = None,
                    centroids: dict | None = None,
-                   external=None) -> pd.DataFrame:
+                   external=None,
+                   city_alt: dict | None = None) -> pd.DataFrame:
     """df 须已含 elo_home/elo_away/elo_exp_home (来自 elo.compute_elo_history)。
 
     external: worldcup.external.ExternalData, 缺省时外部特征列为 NaN
@@ -160,13 +174,33 @@ def build_features(df: pd.DataFrame,
     scorers: dict[str, deque] = defaultdict(deque)   # (date, scorer)
     majors: dict[str, deque] = defaultdict(deque)    # 大赛日期
     confed: dict[str, int] = defaultdict(int)
+    # v3 新增状态
+    progress: dict[str, deque] = defaultdict(lambda: deque(maxlen=25))
+    # (scored_first, conceded_first, pts)
+    vs_strong: dict[str, deque] = defaultdict(lambda: deque(maxlen=15))
+    form_major: dict[str, deque] = defaultdict(lambda: deque(maxlen=10))
+    form_friendly: dict[str, deque] = defaultdict(lambda: deque(maxlen=10))
+    cumtravel: dict[str, deque] = defaultdict(deque)  # (date, km)
 
     _derived = ("elo_home", "elo_away", "elo_diff", "elo_sum",
                 "elo_exp_home", "neutral_f", "importance",
-                "fm_xi_diff", "mv_diff", "travel_diff")
-    cols = {c: (np.full(n, np.nan) if c.startswith(("fm_", "mv_", "mkt_"))
+                "fm_xi_diff", "mv_diff", "travel_diff", "rest_diff")
+    cols = {c: (np.full(n, np.nan)
+                if c.startswith(("fm_", "mv_", "mkt_", "venue_alt", "alt_"))
                 else np.zeros(n))
             for c in FEATURE_COLS if c not in _derived}
+    city = df["city"].fillna("").to_numpy() if "city" in df.columns \
+        else np.full(n, "")
+    city_alt = city_alt or {}
+    # 球队本国典型海拔: 历史主场城市海拔的中位数 (静态, 与结果无关)
+    team_alt: dict[str, float] = {}
+    if city_alt:
+        halt = pd.DataFrame({
+            "t": df["home_team"], "c": df["city"].fillna(""),
+            "neu": df["neutral"]})
+        halt = halt[~halt["neu"]]
+        halt["alt"] = halt["c"].map(city_alt)
+        team_alt = halt.dropna().groupby("t")["alt"].median().to_dict()
 
     def elo_then(t, d):
         """t 在 d-365 天时的 Elo (无记录则取现值 -> 趋势 0)。"""
@@ -179,14 +213,28 @@ def build_features(df: pd.DataFrame,
                 break
         return val
 
+    _GF_PRIOR = (0.25, 0.25, 0.10, 0.15, 0.15, 0.10)
+
     def goal_features(t):
+        """(late_goal, late_concede, pen_share, early_goal, early_concede,
+        pen_concede) 占比, 近 GOALEV_N 场。"""
         rec = goalrec[t]
         if not rec:
-            return 0.25, 0.25, 0.10, 0.15
-        arr = np.array(rec, float)  # gf, late_gf, ga, late_ga, pens
-        gf, lgf, ga, lga, pen = arr.sum(0)
+            return _GF_PRIOR
+        arr = np.array(rec, float)
+        gf, lgf, egf, ga, lga, ega, pf, pa = arr.sum(0)
         return (lgf / gf if gf else 0.25, lga / ga if ga else 0.25,
-                pen / gf if gf else 0.10, 0.0)
+                pf / gf if gf else 0.10, egf / gf if gf else 0.15,
+                ega / ga if ga else 0.15, pa / ga if ga else 0.10)
+
+    def progression_stats(t):
+        """(逆转拿分率, 先进球获胜率): 先丢球后拿分 / 先进球后赢下。"""
+        rec = progress[t]
+        conceded = [pts for sf, cf, pts in rec if cf]
+        led = [pts for sf, cf, pts in rec if sf]
+        cb = float(np.mean([p > 0 for p in conceded])) if len(conceded) >= 3 else 0.30
+        hold = float(np.mean([p == 3 for p in led])) if len(led) >= 3 else 0.65
+        return cb, hold
 
     def scorer_stats(t, d):
         """(射手集中度 HHI, 核心射手近期状态)。
@@ -244,14 +292,45 @@ def build_features(df: pd.DataFrame,
             else:
                 cols[f"travel_{side}"][i] = np.nan
                 cols[f"tz_{side}"][i] = np.nan
-            # 球员级
-            lg, lc, ps, _ = goal_features(t)
+            # 球员级 + 比分演进
+            lg, lc, ps, eg, ec, pc = goal_features(t)
             cols[f"late_goal_{side}"][i] = lg
             cols[f"late_concede_{side}"][i] = lc
             cols[f"pen_share_{side}"][i] = ps
+            cols[f"early_goal_{side}"][i] = eg
+            cols[f"early_concede_{side}"][i] = ec
+            cols[f"pen_concede_{side}"][i] = pc
+            cb, hold = progression_stats(t)
+            cols[f"comeback_{side}"][i] = cb
+            cols[f"hold_{side}"][i] = hold
             hhi, star = scorer_stats(t, d)
             cols[f"scorer_hhi_{side}"][i] = hhi
             cols[f"star_form_{side}"][i] = star
+            # 强弱分裂 / 大赛系数 / 稳定性
+            vsd = vs_strong[t]
+            cols[f"vs_strong_{side}"][i] = float(np.mean(vsd)) if len(vsd) >= 3 else 1.0
+            fm_, ff_ = form_major[t], form_friendly[t]
+            cols[f"major_gap_{side}"][i] = \
+                (float(np.mean(fm_)) - float(np.mean(ff_))) \
+                if len(fm_) >= 3 and len(ff_) >= 3 else 0.0
+            eh_hist = [e for _, e in elo_hist[t]]
+            cols[f"elo_vol_{side}"][i] = \
+                float(np.std(np.diff(eh_hist[-11:]))) if len(eh_hist) >= 4 else 12.0
+            # 气候 / 累计旅途 / 海拔
+            tc2, mc2 = centroids.get(t), centroids.get(country[i])
+            cols[f"clim_mismatch_{side}"][i] = \
+                (abs(tc2[0]) - abs(mc2[0])) / 90.0 if tc2 and mc2 else 0.0
+            ct = cumtravel[t]
+            cut60 = d - np.timedelta64(60, "D")
+            while ct and ct[0][0] < cut60:
+                ct.popleft()
+            cols[f"cumtravel_{side}"][i] = sum(km for _, km in ct)
+            ta = team_alt.get(t)
+            va = city_alt.get(city[i])
+            if va is not None and va == va:
+                cols["venue_alt"][i] = va / 1000.0
+                if ta is not None and ta == ta:
+                    cols[f"alt_mismatch_{side}"][i] = (va - ta) / 1000.0
             # 外部商业数据 (as-of 防泄漏查询)
             if external is not None:
                 for k, v in external.fm_features(t, d).items():
@@ -316,30 +395,53 @@ def build_features(df: pd.DataFrame,
             majors[h].append(d)
             majors[a].append(d)
 
+        # v3 状态更新: 强弱分裂 / 大赛系数 / 累计旅途
+        pts_a = 3.0 - pts_h if margin != 0 else 1.0
+        if ea > 1750:
+            vs_strong[h].append(pts_h)
+        if eh > 1750:
+            vs_strong[a].append(pts_a)
+        for t, p in ((h, pts_h), (a, pts_a)):
+            (form_major if imp[i] >= 50 else form_friendly)[t].append(p)
+        for side, t in (("h", h), ("a", a)):
+            km = cols[f"travel_{side}"][i]
+            if km == km:
+                cumtravel[t].append((d, km))
+
         ev = gev.get(date_strs[i], h, a)
-        stats = {h: [0, 0, 0], a: [0, 0, 0]}  # goals, late, pens
+        stats = {h: [0, 0, 0, 0], a: [0, 0, 0, 0]}  # goals, late, early, pens
+        first_team, first_min = None, 1e9
         for team, minute, pen, scorer in ev:
             if team not in stats:
                 continue
             stats[team][0] += 1
-            if minute == minute and minute >= LATE_MIN:
-                stats[team][1] += 1
+            if minute == minute:
+                if minute >= LATE_MIN:
+                    stats[team][1] += 1
+                if minute <= EARLY_MAX:
+                    stats[team][2] += 1
+                if minute < first_min:
+                    first_team, first_min = team, minute
             if pen:
-                stats[team][2] += 1
+                stats[team][3] += 1
             scorers[team].append((d, scorer))
         if ev:
             gh, ga_ev = stats[h], stats[a]
-            goalrec[h].append((gh[0], gh[1], ga_ev[0], ga_ev[1], gh[2]))
-            goalrec[a].append((ga_ev[0], ga_ev[1], gh[0], gh[1], ga_ev[2]))
+            goalrec[h].append((gh[0], gh[1], gh[2], ga_ev[0], ga_ev[1],
+                               ga_ev[2], gh[3], ga_ev[3]))
+            goalrec[a].append((ga_ev[0], ga_ev[1], ga_ev[2], gh[0], gh[1],
+                               gh[2], ga_ev[3], gh[3]))
+            if first_team is not None:
+                progress[h].append((first_team == h, first_team == a, pts_h))
+                progress[a].append((first_team == a, first_team == h, pts_a))
 
-    out = df.copy()
-    for c, v in cols.items():
-        out[c] = v
+    out = pd.concat([df.copy(), pd.DataFrame(cols, index=df.index)], axis=1)
     out["elo_diff"] = out["elo_home"] - out["elo_away"] \
         + np.where(out["neutral"], 0.0, 80.0)
     out["elo_sum"] = out["elo_home"] + out["elo_away"]
     out["travel_diff"] = out["travel_h"] - out["travel_a"]
     out["fm_xi_diff"] = out["fm_xi_h"] - out["fm_xi_a"]
     out["mv_diff"] = out["mv_log_h"] - out["mv_log_a"]
+    out["rest_diff"] = out["rest_h"] - out["rest_a"]
     out["neutral_f"] = out["neutral"].astype(float)
     return out

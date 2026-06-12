@@ -1,0 +1,11 @@
+{
+  "version": "2026-06-10_6d5b633",
+  "git_rev": "6d5b633",
+  "data_end": "2026-06-10",
+  "n_matches": 49403,
+  "n_features": 80,
+  "xg_weight": 0.75,
+  "goal_scale": 1.03,
+  "temperature": 1.0307017413888067,
+  "trained_at": "2026-06-12T12:28:42Z"
+}

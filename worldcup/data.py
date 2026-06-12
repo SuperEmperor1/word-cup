@@ -48,8 +48,10 @@ def load_matches(path: str = DATA_PATH) -> pd.DataFrame:
     """加载全部比赛, 返回按日期排序的 DataFrame。
 
     返回两类行: 已完赛 (played=True) 与未来赛程 (played=False)。
+    摄入时做数据质量校验 (重复行 / 异常比分 / 队名空白)。
     """
     df = pd.read_csv(path, parse_dates=["date"])
+    df = validate_matches(df)
     df["neutral"] = df["neutral"].astype(bool)
     df["played"] = df["home_score"].notna() & df["away_score"].notna()
     df["importance"] = df["tournament"].map(match_importance)
@@ -57,6 +59,23 @@ def load_matches(path: str = DATA_PATH) -> pd.DataFrame:
     # 极端比分 (历史早期 31-0 之类) 截断, 避免扭曲泊松强度
     for c in ("home_score", "away_score"):
         df[c] = np.minimum(df[c].astype(float), 12)
+    return df
+
+
+def validate_matches(df: pd.DataFrame) -> pd.DataFrame:
+    """防御性摄入校验: 队名修剪、自我对阵/负比分剔除、重复行去重。"""
+    import warnings
+    for c in ("home_team", "away_team"):
+        df[c] = df[c].str.strip()
+    bad = (df["home_team"] == df["away_team"]) \
+        | (df["home_score"] < 0) | (df["away_score"] < 0)
+    if bad.any():
+        warnings.warn(f"剔除 {int(bad.sum())} 行异常数据 (自我对阵/负比分)")
+        df = df[~bad]
+    dup = df.duplicated(["date", "home_team", "away_team"], keep="first")
+    if dup.any():
+        warnings.warn(f"剔除 {int(dup.sum())} 行重复比赛")
+        df = df[~dup]
     return df
 
 
@@ -76,6 +95,25 @@ _COUNTRY_ALIASES = {
     "Saint Vincent and the Grenadines": "St Vincent and the Grenadines",
     "England": "United Kingdom", "Scotland": "United Kingdom",
     "Wales": "United Kingdom", "Northern Ireland": "United Kingdom",
+}
+
+
+# 高海拔比赛城市 (米)。海拔效应在 >800m 才显著, 其余城市近似为 0;
+# GeoNames 全量数据被网络策略限制, 静态表覆盖全部文献中显著的场地。
+CITY_ALTITUDES: dict[str, float] = {
+    "El Alto": 4090, "La Paz": 3640, "Cusco": 3400, "Potosí": 4060,
+    "Sucre": 2810, "Oruro": 3710, "Cochabamba": 2560, "Quito": 2850,
+    "Bogotá": 2640, "Arequipa": 2335, "Toluca": 2660, "Mexico City": 2240,
+    "Pachuca": 2432, "Puebla": 2135, "Aguascalientes": 1880,
+    "San Luis Potosí": 1860, "Querétaro": 1820, "León": 1815,
+    "Guadalajara": 1566, "Zapopan": 1560, "Monterrey": 540,
+    "Addis Ababa": 2355, "Asmara": 2325, "Sana'a": 2250,
+    "Nairobi": 1795, "Johannesburg": 1753, "Pretoria": 1339,
+    "Bloemfontein": 1395, "Harare": 1490, "Kigali": 1567, "Kampala": 1190,
+    "Kathmandu": 1400, "Thimphu": 2334, "Tehran": 1190, "Yerevan": 990,
+    "Ankara": 938, "Denver": 1609, "Guatemala City": 1500,
+    "Quetzaltenango": 2330, "Tegucigalpa": 990, "San José": 1170,
+    "Madrid": 667,
 }
 
 
